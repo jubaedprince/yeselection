@@ -15,8 +15,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['middleware'=>'key'], function(){
+    Route::get('ballot', 'ElectionController@ballot');
+    Route::post('ballot', 'ElectionController@processBallot');
+});
+
+
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function(){
     Route::get('/', 'DashboardController@home');
+
+    Route::get('/count', 'ElectionController@countVote');
+
+    Route::get('/send', 'ElectionController@sendAllBallot');
+
+    Route::resource('voter', 'VoterController', ['except' => ['edit', 'update']]);
+
+    Route::resource('candidate', 'CandidateController', ['except' => ['edit', 'update']]);
+
+    Route::post('voter/{id}/resend', 'ElectionController@resendBallot');
 });
 
 

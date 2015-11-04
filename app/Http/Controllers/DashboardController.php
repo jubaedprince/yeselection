@@ -10,10 +10,16 @@ use Illuminate\Support\Facades\View;
 
 class DashboardController extends Controller
 {
-    public function home()
-    {
+    public function home(){
         return view('dashboard.home');
     }
 
+    public function startElection(){
+        return view('dashboard.home');
+    }
+
+    public function stopElection(){
+        return view('dashboard.home');
+    }
 
 }
