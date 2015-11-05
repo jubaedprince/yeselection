@@ -18,14 +18,12 @@ class CandidateController extends Controller
     {
         $candidates = Candidate::all();
         return view('dashboard.allCandidates')->with('candidates', $candidates);
-        //TODO:: Make view.
     }
 
 
     public function create()
     {
         return view('form.createCandidate');
-        //TODO:: Make view.
     }
 
 
@@ -50,14 +48,12 @@ class CandidateController extends Controller
 
             return view('dashboard.home')->with('message', 'Candidate Added Successfully.');
         }
-        //TODO:: Make view.
     }
 
     public function show($id)
     {
         $candidate = Candidate::find($id);
         return view('dashboard.candidate')->with('candidate', $candidate);
-        //TODO:: Make view.
     }
 
     public function edit($id)
@@ -75,6 +71,5 @@ class CandidateController extends Controller
         $candidate = Candidate::find($id);
         $candidate->delete();
         return Redirect::to('/dashboard/candidate')->with('message', 'Candidate deleted Successfully.');
-        //TODO:: Make view.
     }
 }

@@ -4,7 +4,8 @@
 @section('title', 'Add Candidate')
 
 @section('content')
-
+<div class="lato">
+    <h3 class="text-center">Add a candidate</h3>
     <form action="/dashboard/candidate" method="POST">
         {!! csrf_field() !!}
 
@@ -34,7 +35,7 @@
         </div>
 
 
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-success">Submit</button>
     </form>
-
+</div>
 @endsection

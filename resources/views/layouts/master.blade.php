@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,400" rel="stylesheet" type="text/css">
     {{--BOOTSTRAP END--}}
 </head>
 
 <body>
 
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default lato">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">YES ALUMNI ELECTION</a>
@@ -21,7 +22,7 @@
             <div>
                 <ul class="nav navbar-nav">
                     @if(!Auth::guest())
-                        <li><a href="/dashboard">Home</a></li>
+                        <li><a href="/dashboard">Dashboard</a></li>
                         <li><a href="{{action('VoterController@create')}}">Add Voter</a></li>
                         <li><a href="{{action('VoterController@index')}}">All Voters</a></li>
                         <li><a href="{{action('CandidateController@create')}}">Add Candidate</a></li>
@@ -36,21 +37,16 @@
     </nav>
 
     <div class="container">
-        {{--Nav Bar--}}
-        <!-- <div class="jumbotron">
-            <h1>Dashboard</h1>
-        </div> -->
-
         {{--Message--}}
        @if(Session::get('message')!= '')
-            <div class="alert alert-info">
+            <div data-dismiss="alert" class="alert alert-danger">
                 {{Session::get('message')}}
             </div>
        @endif
 
         {{--Message--}}
         @if(isset($message))
-            <div class="alert alert-info">
+            <div data-dismiss="alert" class="alert alert-info">
                 {{$message}}
             </div>
         @endif
@@ -58,7 +54,7 @@
         {{--Errors--}}
 
         @if (count($errors) > 0)
-            <div class="alert alert-danger">
+            <div data-dismiss="alert" class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -73,6 +69,17 @@
             @yield('content')
         </div>
     </div>
+    <style type="text/css">
+        .lato{
+            font-family: 'Lato' sans-serif;
+            font-weight: 400;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(".alert").alert();
+        window.setTimeout(function() { $(".alert").alert('close'); }, 5000);
+    </script>
 </body>
 
 </html>

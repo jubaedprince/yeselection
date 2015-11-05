@@ -1,10 +1,11 @@
 
 @extends('layouts.master')
 
-@section('title', 'Dashboard')
+@section('title', 'Add Voter')
 
 @section('content')
-
+<div class="lato">
+    <h3 class="text-center">Add a voter</h3>
     <form action="/dashboard/voter" method="POST">
         {!! csrf_field() !!}
 
@@ -51,7 +52,7 @@
             </select>
         </div>
 
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-success">Submit</button>
     </form>
-
+</div>
 @endsection
