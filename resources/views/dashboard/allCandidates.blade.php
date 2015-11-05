@@ -6,7 +6,7 @@
 @section('content')
 
 
-    <h2>Voter List</h2>
+    <h2>Candidate List</h2>
     <p></p>
     <table class="table">
         <thead>

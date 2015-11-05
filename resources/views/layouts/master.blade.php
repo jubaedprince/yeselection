@@ -5,6 +5,7 @@
     {{--BOOTSTRAP--}}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     {{--BOOTSTRAP END--}}
@@ -19,9 +20,8 @@
             </div>
             <div>
                 <ul class="nav navbar-nav">
-                    <li><a href="/dashboard">Home</a></li>
-
                     @if(!Auth::guest())
+                        <li><a href="/dashboard">Home</a></li>
                         <li><a href="{{action('VoterController@create')}}">Add Voter</a></li>
                         <li><a href="{{action('VoterController@index')}}">All Voters</a></li>
                         <li><a href="{{action('CandidateController@create')}}">Add Candidate</a></li>
@@ -37,9 +37,9 @@
 
     <div class="container">
         {{--Nav Bar--}}
-        <div class="jumbotron">
+        <!-- <div class="jumbotron">
             <h1>Dashboard</h1>
-        </div>
+        </div> -->
 
         {{--Message--}}
        @if(Session::get('message')!= '')
