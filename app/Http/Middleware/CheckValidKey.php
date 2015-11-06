@@ -19,12 +19,14 @@ class CheckValidKey
 
         if ($key==null)
         {
-            return "You can't vote!";
+            $message="You can't vote!";
+            return view('form.success')->with('message', $message);
         }
 
         if($key->voted)
         {
-            return "You already voted";
+            $message="You already voted.";
+            return view('form.success')->with('message', $message);
         }
 
         return $next($request);

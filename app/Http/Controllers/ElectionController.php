@@ -29,14 +29,15 @@ class ElectionController extends Controller
         $selected_candidates = $request->input('candidate');
 
         if (sizeof($selected_candidates)!=4){
-            return "Vote won't be counted. You didn't chose the right number of candidates.";
+            $message="Vote won't be counted. You didn't chose the right number of candidates.";
+            return view('form.success')->with('message', $message);
         }
         foreach ($request->input('candidate') as $id){
             Vote::create(['candidate_id' => $id]);
         }
 
-        return "Thanks for voting.";
-        //TODO::make view
+        $message="Thanks for voting.";
+        return view('form.success')->with('message', $message);
     }
 
     public function sendAllBallot(){

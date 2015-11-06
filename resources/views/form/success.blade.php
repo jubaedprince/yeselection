@@ -38,8 +38,10 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">YES Alumni Election 2016</div>
+                <div class="title"><?php echo $message?></div>
             </div>
         </div>
     </body>
 </html>
+
+

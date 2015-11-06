@@ -4,11 +4,10 @@
 @section('title', 'Dashboard: All Candidates')
 
 @section('content')
-
-
+<div class="col-md-12">
     <h2>Candidate List</h2>
     <p></p>
-    <table class="table">
+    <table class="table lato">
         <thead>
         <tr>
             <th>Full Name</th>
@@ -38,4 +37,5 @@
         @endforeach
         </tbody>
     </table>
+</div>
 @endsection
