@@ -7,18 +7,11 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
+use App\Flag;
 
 class DashboardController extends Controller
 {
     public function home(){
-        return view('dashboard.home');
-    }
-
-    public function startElection(){
-        return view('dashboard.home');
-    }
-
-    public function stopElection(){
         return view('dashboard.home');
     }
 

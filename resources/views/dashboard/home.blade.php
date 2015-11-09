@@ -60,7 +60,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-3 span6">
-                                    <a class="btn btn-info btn-block"  href="">Start Vote</a>
+                                    <a class="btn btn-info btn-block"  href="{{action('ElectionController@startElection')}}">Start Vote</a>
                                 </div>
                             </div>
                             <div>
@@ -68,7 +68,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-3 span6">
-                                    <a class="btn btn-info btn-block"  href="">End Vote</a>
+                                    <a class="btn btn-info btn-block"  href="{{action('ElectionController@stopElection')}}">End Vote</a>
                                 </div>
                             </div>
                        </div>

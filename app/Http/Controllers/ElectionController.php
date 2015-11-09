@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Flag;
 use App\Candidate;
 use App\Voter;
 use App\Key;
@@ -50,6 +51,9 @@ class ElectionController extends Controller
 
     public function resendBallot($id){
         $voter = Voter::find($id);
+        if ($voter->voted == true){
+            return Redirect::to('/dashboard/voter')->with('message', 'User already voted. Cannot resend ballot');
+        }
         $voter->key->delete();
 
         $key = Key::createKey($voter);
@@ -69,5 +73,19 @@ class ElectionController extends Controller
             echo '<br>';
         }
         return 0;
+    }
+
+    public function startElection(){
+        $flag = Flag::find(1);
+        $flag->run_election = true;
+        $flag->save();
+        return view('dashboard.home')->with('message', 'Election started');
+    }
+
+    public function stopElection(){
+        $flag = Flag::find(1);
+        $flag->run_election = false;
+        $flag->save();
+        return view('dashboard.home')->with('message', 'Election ended');
     }
 }
