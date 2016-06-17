@@ -72,15 +72,33 @@ class ElectionController extends Controller
 
     }
 
+    public function count(){
+        return view('dashboard.result');
+    }
+
     public function countVote(){
         $candidates = Candidate::all();
 
-        foreach ($candidates as $candidate)
-        {
-            echo $candidate->first_name . ' ' . $candidate->getVoteCount();
-            echo '<br>';
+        $labels = array();
+        $viewDataset = array();
+        foreach ($candidates as $candidate) {
+
+            array_push($labels, $candidate->first_name." ".$candidate->last_name." (".$candidate->getVoteCount().") ");
+            array_push($viewDataset, $candidate->getVoteCount());
         }
-        return 0;
+
+        $viewData = array('labels'=>$labels, 'datasets'=> array (
+            array('label'           => "# of votes",
+                'fillColor'         => "rgba(255, 206, 86, 0.2)",
+                'strokeColor'       => "rgba(255, 206, 86, 0.2)",
+                'highlightFill'     => "rgba(255, 206, 86, 0.2)",
+                'highlightStroke'   => "rgba(220,220,220,1)",
+                'backgroundColor'   => "rgba(75, 192, 192, 0.2)",
+                'borderColor'       => "rgba(75, 192, 192, 1)",
+                'borderWidth'       => "1",
+                'data'              =>$viewDataset),
+        ));
+        return (json_encode($viewData));
     }
 
     public function startElection(){

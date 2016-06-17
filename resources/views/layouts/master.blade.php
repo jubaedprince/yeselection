@@ -23,6 +23,7 @@
                 <ul class="nav navbar-nav">
                     @if(!Auth::guest())
                         <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/dashboard/result">Result</a></li>
                         <li><a href="{{action('VoterController@create')}}">Add Voter</a></li>
                         <li><a href="{{action('VoterController@index')}}">All Voters</a></li>
                         <li><a href="{{action('CandidateController@create')}}">Add Candidate</a></li>

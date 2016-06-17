@@ -11,7 +11,7 @@
         @if ($flag->run_election == "1")
             <p style="color:#337ab7">Election is now going on</p>
         @else
-            <p style="color:red">Election is not going on.</p>
+            <p style="color:red">Election is not going on</p>
         @endif
     @endif
 

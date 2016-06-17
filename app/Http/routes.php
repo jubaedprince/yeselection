@@ -26,6 +26,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function(){
 
     Route::get('/count', 'ElectionController@countVote');
 
+    Route::get('/result', 'ElectionController@count');
+
     Route::get('/send', 'ElectionController@sendAllBallot');
 
     Route::resource('voter', 'VoterController', ['except' => ['edit', 'update']]);
