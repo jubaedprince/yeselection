@@ -52,7 +52,7 @@ class ElectionController extends Controller
     public function sendAllBallot(){
         $keys = Key::all();
         foreach($keys as $key){
-            echo $key->voter->email . ' ==> yeselection.dev/ballot?key=' . $key->key . '<br>';
+            echo $key->voter->email . ', <a href="http://yeselection.techynaf.com/ballot?key=' . $key->key . '">http://yeselection.techynaf.com/ballot?key='.$key->key .'</a><br>';
         }
         //TODO:: send ballotlink to all the voters
     }
