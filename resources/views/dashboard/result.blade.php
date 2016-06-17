@@ -33,7 +33,7 @@
                         yAxes: [{
                             ticks: {
                                 beginAtZero:true,
-                                stepSize: 1,
+                                suggestedMin: 1,
                             }
                         }],
                     },

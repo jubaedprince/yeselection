@@ -14,30 +14,69 @@
 
 <body>
 
-    <nav class="navbar navbar-default lato">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">YES ALUMNI ELECTION</a>
-            </div>
-            <div>
-                <ul class="nav navbar-nav">
-                    @if(!Auth::guest())
-                        <li><a href="/dashboard">Dashboard</a></li>
-                        <li><a href="/dashboard/result">Result</a></li>
-                        <li><a href="{{action('VoterController@create')}}">Add Voter</a></li>
-                        <li><a href="{{action('VoterController@index')}}">All Voters</a></li>
-                        <li><a href="{{action('CandidateController@create')}}">Add Candidate</a></li>
-                        <li><a href="{{action('CandidateController@index')}}">All Candidates</a></li>
-                        <li><a href="{{action('Auth\AuthController@getLogout')}}">Logout</a></li>
-                    @else
+    {{--<nav class="navbar navbar-default lato">--}}
+        {{--<div class="container-fluid">--}}
+            {{--<div class="navbar-header">--}}
+                {{--<a class="navbar-brand" href="#">YES ALUMNI ELECTION</a>--}}
+            {{--</div>--}}
+            {{--<div>--}}
+                {{--<ul class="nav navbar-nav">--}}
+                    {{--@if(!Auth::guest())--}}
+                        {{--<li><a href="/dashboard">Dashboard</a></li>--}}
+                        {{--<li><a href="/dashboard/result">Result</a></li>--}}
+                        {{--<li><a href="{{action('VoterController@create')}}">Add Voter</a></li>--}}
+                        {{--<li><a href="{{action('VoterController@index')}}">All Voters</a></li>--}}
+                        {{--<li><a href="{{action('CandidateController@create')}}">Add Candidate</a></li>--}}
+                        {{--<li><a href="{{action('CandidateController@index')}}">All Candidates</a></li>--}}
+                        {{--<li><a href="{{action('Auth\AuthController@getLogout')}}">Logout</a></li>--}}
+                    {{--@else--}}
 
-                    @endif
-                </ul>
-            </div>
+                    {{--@endif--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+            {{--<div class="navbar-header"><a class="navbar-brand" href="#">Brand</a>--}}
+                {{--@if(!Auth::guest())--}}
+                    {{--<li><a href="/dashboard">Dashboard</a></li>--}}
+                    {{--<li><a href="/dashboard/result">Result</a></li>--}}
+                    {{--<li><a href="{{action('VoterController@create')}}">Add Voter</a></li>--}}
+                    {{--<li><a href="{{action('VoterController@index')}}">All Voters</a></li>--}}
+                    {{--<li><a href="{{action('CandidateController@create')}}">Add Candidate</a></li>--}}
+                    {{--<li><a href="{{action('CandidateController@index')}}">All Candidates</a></li>--}}
+                    {{--<li><a href="{{action('Auth\AuthController@getLogout')}}">Logout</a></li>--}}
+                {{--@else--}}
+
+                {{--@endif--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</nav>--}}
+
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-header"><a class="navbar-brand" href="/">YES ALUMNI ELECTION</a>
+            <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
         </div>
-    </nav>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                @if(!Auth::guest())
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/dashboard/result">Result</a></li>
+                    <li><a href="{{action('VoterController@create')}}">Add Voter</a></li>
+                    <li><a href="{{action('VoterController@index')}}">All Voters</a></li>
+                    <li><a href="{{action('CandidateController@create')}}">Add Candidate</a></li>
+                    <li><a href="{{action('CandidateController@index')}}">All Candidates</a></li>
+                    <li><a href="{{action('Auth\AuthController@getLogout')}}">Logout</a></li>
+                @else
 
-    <div class="container">
+                @endif
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="container" style="padding-top: 50px">
 
         {{--Message--}}
        @if(Session::get('message')!= '')
