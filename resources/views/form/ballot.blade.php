@@ -60,6 +60,10 @@
             </div>
         </div>
 
+        <div class="footer navbar-fixed-bottom text-center">
+            <p text>Created by <a href="http://www.techynaf.com" target="_blank">Techynaf</a></p>
+        </div>
+
 
         <style>
             .col-centered{
@@ -80,6 +84,10 @@
             .checkbox{
                 font-weight: bold;
                 color: white;
+            }
+            .footer{
+                background: #F8F8F8;
+                padding-top: 10px;
             }
         </style>
 

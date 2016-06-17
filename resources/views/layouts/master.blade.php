@@ -76,7 +76,7 @@
     </div>
 
 
-    <div class="container" style="padding-top: 50px">
+    <div class="container" style="padding-top: 70px">
 
         {{--Message--}}
        @if(Session::get('message')!= '')
@@ -110,10 +110,19 @@
             @yield('content')
         </div>
     </div>
+
+    <div class="footer navbar-fixed-bottom text-center">
+        <p text>Created by <a href="http://www.techynaf.com" target="_blank">Techynaf</a></p>
+    </div>
+
     <style type="text/css">
         .lato{
             font-family: 'Lato' sans-serif;
             font-weight: 400;
+        }
+        .footer{
+            background: #F8F8F8;
+            padding-top: 10px;
         }
     </style>
 
