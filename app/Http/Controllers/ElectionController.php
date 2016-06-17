@@ -17,8 +17,14 @@ use DB;
 class ElectionController extends Controller
 {
     public function ballot(){
-        $candidates = Candidate::all();
-        return view('form.ballot')->with('candidates', $candidates);
+
+        $isNowElection = Flag::get()->first();
+        if($isNowElection->run_election == "1"){
+            $candidates = Candidate::all();
+            return view('form.ballot')->with('candidates', $candidates);
+        }else{
+            return view('form.success')->with('message', "The Election hasn't started yet. Please Wait..");
+        }
     }
 
     public function processBallot(Request $request){

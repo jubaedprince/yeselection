@@ -33,8 +33,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function(){
     Route::resource('candidate', 'CandidateController', ['except' => ['edit', 'update']]);
 
     Route::post('voter/{id}/resend', 'ElectionController@resendBallot');
-    Route::get('/startVote', 'ElectionController@startElection');
-    Route::get('/endVote', 'ElectionController@stopElection');
+    Route::get('/start-vote', 'ElectionController@startElection');
+    Route::get('/end-vote', 'ElectionController@stopElection');
 });
 
 
