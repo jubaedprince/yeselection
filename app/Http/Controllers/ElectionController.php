@@ -18,10 +18,12 @@ class ElectionController extends Controller
 {
     public function ballot(){
 
-        $isNowElection = Flag::get()->first();
-        if($isNowElection->run_election == "1"){
+        $flag = Flag::get()->first();
+        if($flag->run_election == true){
             $candidates = Candidate::all();
             return view('form.ballot')->with('candidates', $candidates);
+        }elseif ($flag->end_election == true){
+            return view('form.success')->with('message', "The Election has ended.");
         }else{
             return view('form.success')->with('message', "The Election hasn't started yet. Please Wait..");
         }
@@ -87,6 +89,7 @@ class ElectionController extends Controller
             return view('dashboard.home')->with('message', 'Election has already started');
         }else{
             $flag->run_election = true;
+            $flag->end_election = false;
             $flag->save();
             return view('dashboard.home')->with('message', 'Election started');
         }
@@ -98,6 +101,7 @@ class ElectionController extends Controller
             return view('dashboard.home')->with('message', 'Election has already ended');
         }else{
             $flag->run_election = false;
+            $flag->end_election = true;
             $flag->save();
             return view('dashboard.home')->with('message', 'Election ended');
         }

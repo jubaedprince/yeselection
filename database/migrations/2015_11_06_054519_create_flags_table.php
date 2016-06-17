@@ -15,6 +15,7 @@ class CreateFlagsTable extends Migration
         Schema::create('flags', function (Blueprint $table){
             $table->increments('id');
             $table->boolean('run_election');
+            $table->boolean('end_election');
             $table->timestamps();
         });
     }
