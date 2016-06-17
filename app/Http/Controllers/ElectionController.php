@@ -86,24 +86,24 @@ class ElectionController extends Controller
     public function startElection(){
         $flag = Flag::find(1);
         if($flag->run_election == true){
-            return view('dashboard.home')->with('message', 'Election has already started');
+            return view('dashboard.home')->with('message', 'Election has already started')->with("flag",$flag);
         }else{
             $flag->run_election = true;
             $flag->end_election = false;
             $flag->save();
-            return view('dashboard.home')->with('message', 'Election started');
+            return view('dashboard.home')->with('message', 'Election started')->with("flag",$flag);
         }
     }
 
     public function stopElection(){
         $flag = Flag::find(1);
         if($flag->run_election == false){
-            return view('dashboard.home')->with('message', 'Election has already ended');
+            return view('dashboard.home')->with('message', 'Election has already ended')->with("flag",$flag);
         }else{
             $flag->run_election = false;
             $flag->end_election = true;
             $flag->save();
-            return view('dashboard.home')->with('message', 'Election ended');
+            return view('dashboard.home')->with('message', 'Election ended')->with("flag",$flag);
         }
     }
 }

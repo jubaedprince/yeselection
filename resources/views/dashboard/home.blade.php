@@ -6,6 +6,15 @@
 @section('content')
 <div class="col-md-12 text-center lato">
     <h3 class="lato" style="font-size: 50px;font-weight:300">Dashboard</h3>
+
+    @if(isset($flag))
+        @if ($flag->run_election == "1")
+            <p style="color:#337ab7">Election is now going on</p>
+        @else
+            <p style="color:red">Election is not going on.</p>
+        @endif
+    @endif
+
     <div>
         <br>
     </div>

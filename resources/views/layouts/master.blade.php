@@ -37,6 +37,7 @@
     </nav>
 
     <div class="container">
+
         {{--Message--}}
        @if(Session::get('message')!= '')
             <div data-dismiss="alert" class="alert alert-danger">
@@ -78,7 +79,7 @@
 
     <script type="text/javascript">
         $(".alert").alert();
-        window.setTimeout(function() { $(".alert").alert('close'); }, 5000);
+        window.setTimeout(function() { $(".alert").alert('close'); }, 10000);
     </script>
 </body>
 

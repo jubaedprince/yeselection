@@ -12,7 +12,8 @@ use App\Flag;
 class DashboardController extends Controller
 {
     public function home(){
-        return view('dashboard.home');
+        $flag = Flag::get()->first();
+        return view('dashboard.home')->with('flag', $flag);
     }
 
 }
