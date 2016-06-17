@@ -89,6 +89,9 @@
                 background: #F8F8F8;
                 padding-top: 10px;
             }
+            .row{
+                padding-bottom: 60px;
+            }
         </style>
 
         <script type="text/javascript">
