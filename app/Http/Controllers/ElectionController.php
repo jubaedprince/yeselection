@@ -94,8 +94,12 @@ class ElectionController extends Controller
 
     public function stopElection(){
         $flag = Flag::find(1);
-        $flag->run_election = false;
-        $flag->save();
-        return view('dashboard.home')->with('message', 'Election ended');
+        if($flag->run_election == false){
+            return view('dashboard.home')->with('message', 'Election has already ended');
+        }else{
+            $flag->run_election = false;
+            $flag->save();
+            return view('dashboard.home')->with('message', 'Election ended');
+        }
     }
 }
