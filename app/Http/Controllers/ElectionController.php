@@ -52,14 +52,21 @@ class ElectionController extends Controller
 
     public function sendAllBallot(){
         $keys = Key::all();
+        header("Content-Type: text/html"); // Set Content-Type
+        while (@ob_end_flush()); // Flush and disable output buffers
         echo "sending email...";
         $c = 1;
         foreach($keys as $key){
             $voter = Voter::find($key->voter_id);
-            $email_sent = $this->sendEmail('daamkotoreport@gmail.com',$voter->first_name.'http://election.yesalumnibd.org/ballot?key='.$key->key);
-            echo $email_sent.'. number of emails sent: ' . $c;
+            $email_sent = $this->sendEmail('daamkotoreport@gmail.com',$voter->first_name. 'http://election.yesalumnibd.org/ballot?key='.$key->key);
+            echo $email_sent.' to '.$voter->first_name.' ('.$voter->email.')';
+            echo  "<br><br>\n";
             $c++;
         }
+        echo 'Total email sent: '.$c-1;
+        echo "<br><br>\n";
+        flush(); // Flush output
+        sleep(1);
         //TODO:: send ballotlink to all the voters
     }
 
@@ -72,7 +79,7 @@ class ElectionController extends Controller
 
         $key = Key::createKey($voter);
 
-        $this->sendEmail('rudrozzal@gmail.com',"Hello, ".$voter->first_name.',http://election.yesalumnibd.org/ballot?key='.$key->key);
+        $this->sendEmail('rudrozzal@gmail.com',"Hello, ".$voter->first_name. ',http://election.yesalumnibd.org/ballot?key='.$key->key);
         //TODO:: Change sendTo $voter->email
 
         return Redirect::to('/dashboard/voter')->with('message', 'Ballot was resent to '. $voter->first_name . '. Link: yeselection.dev/ballot?key=' . $key->key);
@@ -89,7 +96,7 @@ class ElectionController extends Controller
         $labels = array();
         $viewDataset = array();
         foreach ($candidates as $candidate) {
-            
+
             array_push($labels, $candidate->first_name." ".$candidate->last_name." (".$candidate->getVoteCount().") ");
             array_push($viewDataset, $candidate->getVoteCount());
         }
