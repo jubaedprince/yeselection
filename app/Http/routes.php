@@ -19,9 +19,10 @@ Route::group(['middleware'=>'key'], function(){
     Route::get('ballot', 'ElectionController@ballot');
     Route::post('ballot', 'ElectionController@processBallot');
 });
+//TODO:: add auth
+//, 'middleware' => 'auth'
 
-
-Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function(){
+Route::group(['prefix' => 'dashboard'], function(){
     Route::get('/', 'DashboardController@home');
 
     Route::get('/count', 'ElectionController@countVote');
@@ -29,6 +30,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function(){
     Route::get('/result', 'ElectionController@count');
 
     Route::get('/send', 'ElectionController@sendAllBallot');
+
+    Route::get('/sendEmail', 'ElectionController@sendEmail');
 
     Route::resource('voter', 'VoterController', ['except' => ['edit', 'update']]);
 

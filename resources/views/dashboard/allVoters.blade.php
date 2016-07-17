@@ -10,6 +10,7 @@
     <table class="table lato">
         <thead>
         <tr>
+            <th>Serial</th>
             <th>Full Name</th>
             <th>Email</th>
             <th>Contact Number</th>
@@ -17,8 +18,10 @@
         </tr>
         </thead>
         <tbody>
+        <?php $pos = 1?>
         @foreach ($voters as $voter)
         <tr>
+            <td><?php print $pos++?></td>
             <td><a href="voter/{{$voter->id}}">{{$voter->first_name}} {{$voter->middle_name}} {{$voter->last_name}}</a></td>
             <td>{{$voter->email}}</td>
             <td>{{$voter->contact_number}}</td>

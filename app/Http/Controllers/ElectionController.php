@@ -11,6 +11,7 @@ use App\Candidate;
 use App\Voter;
 use App\Key;
 use App\Vote;
+use Illuminate\Support\Facades\Mail;
 use Redirect;
 use DB;
 
@@ -51,8 +52,12 @@ class ElectionController extends Controller
 
     public function sendAllBallot(){
         $keys = Key::all();
+        echo "sending email...";
+        $c = 1;
         foreach($keys as $key){
-            echo $key->voter->email . ', <a href="http://yeselection.techynaf.com/ballot?key=' . $key->key . '">http://yeselection.techynaf.com/ballot?key='.$key->key .'</a><br>';
+            $this->sendEmail('daamkotoreport@gmail.com','http://yeselection.techynaf.com/ballot?key='.$key->key);
+            echo 'number of emails sent: ' . $c;
+            $c++;
         }
         //TODO:: send ballotlink to all the voters
     }
@@ -66,7 +71,9 @@ class ElectionController extends Controller
 
         $key = Key::createKey($voter);
 
-        //TODO:: send ballot link to user email
+        //$this->sendEmail('rudrozzal@gmail.com',"Hello, ".$voter->first_name.',http://yeselection.techynaf.com/ballot?key='.$key->key);
+        $this->sendEmail('mustahsinislam@gmail.com',"Hey Mustu Bhai!");
+        //TODO:: Change sendTo $voter->email
 
         return Redirect::to('/dashboard/voter')->with('message', 'Ballot was resent to '. $voter->first_name . '. Link: yeselection.dev/ballot?key=' . $key->key);
 
@@ -123,5 +130,15 @@ class ElectionController extends Controller
             $flag->save();
             return view('dashboard.home')->with('message', 'Election ended')->with("flag",$flag);
         }
+    }
+
+    public function sendEmail($sendTo,$body){
+        Mail::send([], [], function ($message) use ($sendTo,$body) {
+            $message->to($sendTo)
+            ->subject('YES ALUMNI ELECTION 2016')
+            ->setBody($body);
+        });
+
+        return 'Email Sent.';
     }
 }

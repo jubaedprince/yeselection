@@ -19,7 +19,7 @@ class CreateVotersTable extends Migration
             $table->text('last_name');
             $table->text('email');
             $table->text('contact_number')->nullable();
-            $table->integer('batch_number');
+            $table->text('batch_number');
             $table->softDeletes();
             $table->timestamps();
         });

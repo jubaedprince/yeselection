@@ -31,15 +31,18 @@ class VoterController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'first_name'    =>  'required|max:30|alpha',
+            'first_name'    =>  'required|max:130',
             'middle_name'   =>  'max:30|alpha',
-            'last_name'     =>  'required|max:30|alpha',
+            'last_name'     =>  'max:30|alpha',
             'email'         =>  'required|email|unique:voters',
-            'contact_number'=>  'max:99999999999999999999|numeric',
-            'batch_number'  =>  'required|min:1|max:12'
+            'contact_number'=>  'max:99999999999999999999',
+            'batch_number'  =>  'required|min:1|max:120'
         ]);
 
         if($validator->fails()){
+            //TODO::delete next line
+            return $validator->messages()->toJson();
+
             return back()
                 ->withErrors($validator)
                 ->withInput();
@@ -48,8 +51,8 @@ class VoterController extends Controller
         else{
             $voter = Voter::create($request->all());
 
-
-
+            //TODO::delete next line
+            return "added.";
             return view('dashboard.home')->with('message', 'Voter added Successfully.');
         }
 
