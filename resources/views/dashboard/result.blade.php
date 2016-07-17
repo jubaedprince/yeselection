@@ -7,7 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>
 
     <div class="col-md-12 text-center lato">
-        <canvas id="myChart" width="200" height="100"></canvas>
+        <canvas id="myChart" width="200" height="80"></canvas>
     </div>
 
     <script>
