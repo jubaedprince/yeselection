@@ -38,7 +38,7 @@ class ElectionController extends Controller
         $key->save();
         $selected_candidates = $request->input('candidate');
 
-        if (sizeof($selected_candidates)!=4){
+        if (sizeof($selected_candidates)!=9){
             $message="Vote won't be counted. You didn't chose the right number of candidates.";
             return view('form.success')->with('message', $message);
         }
