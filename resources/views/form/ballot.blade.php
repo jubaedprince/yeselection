@@ -38,19 +38,30 @@
             <div class="row">
                 <form name="form" action="/ballot?key={{ app('request')->input('key') }}" method="POST">
                     {!! csrf_field() !!}
-                    <div class="col-md-6 col-md-offset-3 span5 text-left box">
+                    <div class="col-md-8 col-md-offset-2 span5 text-left box">
+                        </br>
                         <?php $index=0; ?>
-
                         @foreach ($candidates as $candidate)
-                            <div class="checkbox" >
-                                <input tabindex="1" class="styled" onclick="checkcontrol({{$index}})" id="checkbox"  type="checkbox" name="candidate[]" value={{$candidate->id}}>{{$candidate->first_name}} {{$candidate->middle_name}} {{$candidate->last_name}}
+                            <div class="col-md-12">
+                                <div class="center">
+                                    <img src="{{ URL::to('/') }}/default.gif" onError="this.onerror=null;this.src='{{ URL::to('/') }}/default.gif';" class="img-circle" title="{{$candidate->first_name}}" width="100" height="100">
+
+                                    <div class="checkbox">
+                                        <input tabindex="1" onclick="checkcontrol({{$index}})" id="checkbox"  type="checkbox" name="candidate[]" value={{$candidate->id}}>{{$candidate->first_name}} {{$candidate->middle_name}} {{$candidate->last_name}}
+                                    </div>
+                                </div>
+                                <hr>
                             </div>
+                            </br>
+                            </br>
                             <?php $index++; ?>
                         @endforeach
                     </div>
 
                     <div class="col-md-12">
-                        <br>
+                        </br>
+                        </br>
+                        </br>
                     </div>
 
                     <div class="col-md-2 col-md-offset-5 span7 text-center">
@@ -91,6 +102,10 @@
             }
             .row{
                 padding-bottom: 60px;
+            }.center{
+                 /*margin: auto;*/
+                 /*width: 40%;*/
+                 text-align: center;
             }
         </style>
 

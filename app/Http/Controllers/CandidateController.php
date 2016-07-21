@@ -30,9 +30,9 @@ class CandidateController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'first_name'    =>  'required|max:30|alpha',
-            'middle_name'   =>  'max:30|alpha',
-            'last_name'     =>  'required|max:30|alpha',
+            'first_name'    =>  'required',
+            'middle_name'   =>  'max:30',
+            'last_name'     =>  'required',
             'email'         =>  'required|email|unique:candidates',
             'candidate_id'  =>  'numeric'
         ]);
