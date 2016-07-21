@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <h3 id="message" style="font-family: 'Roboto' sans-serif;font-weight: 400; color: red">
-                        Please select 4 candidates. Else, your vote won't be counted.
+                        Please select 9 candidates. Else, your vote won't be counted.
                     </h3>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                                     <img src="{{ URL::to('/') }}/default.gif" onError="this.onerror=null;this.src='{{ URL::to('/') }}/default.gif';" class="img-circle" title="{{$candidate->first_name}}" width="100" height="100">
 
                                     <div class="checkbox">
-                                        <input tabindex="1" onclick="checkcontrol({{$index}})" id="checkbox"  type="checkbox" name="candidate[]" value={{$candidate->id}}>{{$candidate->first_name}} {{$candidate->middle_name}} {{$candidate->last_name}}
+                                        <input tabindex="1" onclick="checkcontrol({{$index}})" id="checkbox"  type="checkbox" name="candidate[]" value={{$candidate->id}}>{{$candidate->first_name}}
                                     </div>
                                 </div>
                                 <hr>
@@ -116,12 +116,12 @@
                 for(var i=0; i < candidate.length; i++){
                     if(candidate[i].checked){
                         total =total +1;}
-                    if(total > 4){
-                        alert("Please Select only four")
+                    if(total > 9){
+                        alert("Please Select only nine")
                         candidate[j].checked = false ;
                         return false;
                     }
-                    if(total==4){
+                    if(total==9){
                         document.getElementById("vote").disabled = false;
                         document.getElementById("message").style.color = "green";
                     }else{

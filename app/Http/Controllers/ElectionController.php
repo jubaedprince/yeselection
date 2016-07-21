@@ -58,7 +58,7 @@ class ElectionController extends Controller
         $c = 1;
         foreach($keys as $key){
             $voter = Voter::find($key->voter_id);
-            $email_sent = $this->sendEmail('daamkotoreport@gmail.com',$voter->first_name. 'http://election.yesalumnibd.org/ballot?key='.$key->key);
+            $email_sent = $this->sendEmail($voter->email ,$voter->first_name. 'http://election.yesalumnibd.org/ballot?key='.$key->key);
             echo $email_sent.' to '.$voter->first_name.' ('.$voter->email.')';
             echo  "<br><br>\n";
             $c++;
@@ -79,7 +79,7 @@ class ElectionController extends Controller
 
         $key = Key::createKey($voter);
 
-        $this->sendEmail('rudrozzal@gmail.com',"Hello, ".$voter->first_name. ',http://election.yesalumnibd.org/ballot?key='.$key->key);
+        $this->sendEmail($voter->email,"Hello, ".$voter->first_name. ',http://election.yesalumnibd.org/ballot?key='.$key->key);
         //TODO:: Change sendTo $voter->email
 
         return Redirect::to('/dashboard/voter')->with('message', 'Ballot was resent to '. $voter->first_name . '. Link: yeselection.dev/ballot?key=' . $key->key);
