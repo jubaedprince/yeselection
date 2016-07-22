@@ -47,6 +47,7 @@ class VoterController extends Controller
 
         else{
             $voter = Voter::create($request->all());
+
             return view('dashboard.home')->with('message', 'Voter added Successfully.');
         }
 
