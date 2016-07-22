@@ -19,8 +19,8 @@ Route::group(['middleware'=>'key'], function(){
     Route::get('ballot', 'ElectionController@ballot');
     Route::post('ballot', 'ElectionController@processBallot');
 });
-//, 'middleware' => 'auth'
-Route::group(['prefix' => 'dashboard'], function(){
+
+Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function(){
     Route::get('/', 'DashboardController@home');
 
     Route::get('/count', 'ElectionController@countVote');
