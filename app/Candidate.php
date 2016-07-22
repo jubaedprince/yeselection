@@ -9,7 +9,7 @@ class Candidate extends Model
 {
     protected $table = 'candidates';
 
-    protected $fillable = ['first_name', 'middle_name', 'last_name', 'email', 'candidate_id'];
+    protected $fillable = ['first_name', 'middle_name', 'last_name', 'email', 'candidate_id','image_res'];
 
     protected $hidden = [];
 

@@ -41,6 +41,10 @@
                 <div class="title"><?php echo $message?></div>
             </div>
         </div>
+
+        <div class="footer navbar-fixed-bottom text-center">
+            <p text>Created by <a href="http://www.techynaf.com" target="_blank">Techynaf</a></p>
+        </div>
     </body>
 </html>
 

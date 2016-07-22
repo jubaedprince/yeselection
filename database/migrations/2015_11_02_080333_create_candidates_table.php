@@ -18,6 +18,7 @@ class CreateCandidatesTable extends Migration
             $table->text('middle_name')->nullable();
             $table->text('last_name');
             $table->text('email');
+            $table->text('image_res')->nullable();
             $table->integer('candidate_id')->nullable(); //Remove later if not required.
             $table->softDeletes();
             $table->timestamps();

@@ -38,8 +38,12 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">YES Alumni Election 2016</div>
+                <div class="title">YES Alumni BD Election 2016</div>
             </div>
+        </div>
+
+        <div class="footer navbar-fixed-bottom text-center">
+            <p text>Created by <a href="http://www.techynaf.com" target="_blank">Techynaf</a></p>
         </div>
     </body>
 </html>
