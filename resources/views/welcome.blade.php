@@ -15,8 +15,6 @@
                 padding: 0;
                 width: 100%;
                 display: table;
-                font-weight: 100;
-                font-family: 'Lato';
             }
 
             .container {
@@ -32,6 +30,13 @@
 
             .title {
                 font-size: 96px;
+                font-weight: 100;
+                font-family: 'Lato';
+            }
+            .created {
+                font-size: 50px;
+                font-weight: 400;
+                font-family: 'Lato';
             }
         </style>
     </head>
@@ -40,10 +45,10 @@
             <div class="content">
                 <div class="title">YES Alumni BD Election 2016</div>
             </div>
-        </div>
 
-        <div class="footer navbar-fixed-bottom text-center">
-            <p text>Created by <a href="http://www.techynaf.com" target="_blank">Techynaf</a></p>
+            <div class="created text-center">
+                <p text>Created by <a href="http://www.techynaf.com" target="_blank">Techynaf</a></p>
+            </div>
         </div>
     </body>
 </html>

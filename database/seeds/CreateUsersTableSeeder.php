@@ -16,18 +16,13 @@ class CreateUsersTableSeeder extends Seeder
 
         $users = [
             [   'name'      => 'Election Commissioner',
-                'email'     => 'example@iearnbd.org',
-                'password'  => Hash::make('password')
+                'email'     => 'ec@yesalumnibd.org.org',
+                'password'  => Hash::make('p@ssword')
             ],
 
-            [   'name'      => 'Wasi Mahmud Moni',
-                'email'     => 'was_mahmud2000@gmail.com',
-                'password'  => Hash::make('password')
-            ],
-
-            [   'name'      => 'Rajib Lochan Das',
-                'email'     => 'dasrl@gmail.com',
-                'password'  => Hash::make('password')
+            [   'name'      => 'Shehabul Hossain',
+                'email'     => 'hello@sunny.im',
+                'password'  => Hash::make('p@ssword')
             ],
 
         ];

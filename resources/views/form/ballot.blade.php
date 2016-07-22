@@ -29,6 +29,11 @@
                         Please select 9 candidates. Else, your vote won't be counted.
                     </h3>
                 </div>
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <h3 style="font-family: 'Roboto' sans-serif;font-weight: 400; color: #000000">
+                        Select the checkboxes.
+                    </h3>
+                </div>
             </div>
 
             <div>
@@ -49,6 +54,7 @@
                                     <div class="checkbox">
                                         <input tabindex="1" onclick="checkcontrol({{$index}})" id="checkbox"  type="checkbox" name="candidate[]" value={{$candidate->id}}>{{$candidate->first_name}}
                                     </div>
+                                    <p style="color: #FFFFFF">{{$candidate->last_name}}</p>
                                 </div>
                                 <hr>
                             </div>

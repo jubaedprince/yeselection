@@ -11,6 +11,7 @@ class CreateFlagsTableSeeder extends Seeder
      */
     public function run()
     {
-        Flag::create(['run_election'=>true]);
+        Flag::create(['run_election'=>false]);
+        Flag::create(['end_election'=>false]);
     }
 }
