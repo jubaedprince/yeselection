@@ -40,9 +40,6 @@ class VoterController extends Controller
         ]);
 
         if($validator->fails()){
-            //TODO::delete next line
-            return $validator->messages()->toJson();
-
             return back()
                 ->withErrors($validator)
                 ->withInput();
@@ -50,9 +47,6 @@ class VoterController extends Controller
 
         else{
             $voter = Voter::create($request->all());
-
-            //TODO::delete next line
-            return "added.";
             return view('dashboard.home')->with('message', 'Voter added Successfully.');
         }
 
