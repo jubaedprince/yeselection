@@ -59,7 +59,23 @@ class ElectionController extends Controller
         $c = 0;
         foreach($keys as $key){
             $voter = Voter::find($key->voter_id);
-            $email_sent = $this->sendEmail($voter->email ,"Hello, ".$voter->first_name. ' http://election.yesalumnibd.org/ballot?key='.$key->key);
+            //$email_sent = $this->sendEmail($voter->email ,"Hello, ".$voter->first_name. ' http://election.yesalumnibd.org/ballot?key='.$key->key);
+            $email_sent = $this->sendEmail($voter->email,"Dear YES Alumni,
+
+                \nHope you are well. This is your official email for voting. The link below has been uniquely generated in your name; so you can only vote once. Click on the URL, and you will be directed to the ballot page where you can cast your vote.
+                \nPlease note that the voting system will ONLY be active from 12:00AM to 11:59PM of Tuesday, 26 July, 2016. You must cast your vote within this time window.
+                \nAfter you have submitted your votes, you will be lead to an end page - that is the confirmation of your vote. If you face any problems during voting, please contact me at the given information below; the necessary actions will be taken.
+                \nThe results will be published after 5:00PM on Wednesday, 27 July, 2016.\n\n". 'The ballot link: http://election.yesalumnibd.org/ballot?key='.$key->key."\n
+                \nThis event marks a great significance in the practice of democracy for the YES Alumni association in Bangladesh. Wishing you and the association all the very best!
+
+                \nBest regards,
+
+                \nMuhammad Maruf Ibne Wali
+                \nElection Commissioner
+                \nYES Alumni EC Elections 2016
+                \nPhone: 01716788220
+                \nemail: marufwali@yahoo.com");
+
             echo $email_sent.' to '.$voter->first_name.' ('.$voter->email.')';
             echo  "<br><br>\n";
             $c++;
@@ -68,7 +84,6 @@ class ElectionController extends Controller
         echo "<br><br>\n";
         flush();
         sleep(1);
-        //TODO:: Change message
     }
 
     public function resendBallot($id){
@@ -78,8 +93,23 @@ class ElectionController extends Controller
         }
         $voter->key->delete();
         $key = Key::createKey($voter);
-        $this->sendEmail($voter->email,"Hello, ".$voter->first_name. ', http://election.yesalumnibd.org/ballot?key='.$key->key);
-        return Redirect::to('/dashboard/voter')->with('message', 'Ballot was resent to '. $voter->first_name . '. Link: yeselection.dev/ballot?key=' . $key->key);
+        //$this->sendEmail($voter->email,"Hello, ".$voter->first_name. ', http://election.yesalumnibd.org/ballot?key='.$key->key);
+        $this->sendEmail($voter->email,"Dear YES Alumni,
+
+        \nHope you are well. This is your official email for voting. The link below has been uniquely generated in your name; so you can only vote once. Click on the URL, and you will be directed to the ballot page where you can cast your vote.
+        \nPlease note that the voting system will ONLY be active from 12:00AM to 11:59PM of Tuesday, 26 July, 2016. You must cast your vote within this time window.
+        \nAfter you have submitted your votes, you will be lead to an end page - that is the confirmation of your vote. If you face any problems during voting, please contact me at the given information below; the necessary actions will be taken.
+        \nThe results will be published after 5:00PM on Wednesday, 27 July, 2016.\n\n". 'The ballot link: http://election.yesalumnibd.org/ballot?key='.$key->key."\n
+        \nThis event marks a great significance in the practice of democracy for the YES Alumni association in Bangladesh. Wishing you and the association all the very best!
+
+        \nBest regards,
+
+        \nMuhammad Maruf Ibne Wali
+        \nElection Commissioner
+        \nYES Alumni EC Elections 2016
+        \nPhone: 01716788220
+        \nemail: marufwali@yahoo.com");
+        return Redirect::to('/dashboard/voter')->with('message', 'Ballot was resent to '. $voter->first_name . '. Link: election.yesalumnibd.org/ballot?key=' . $key->key);
 
     }
 
