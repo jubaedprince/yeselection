@@ -43,6 +43,8 @@ th, td {
 
 <table>
   <tr>
+    <td class="heading">Applicant ID:</td>
+    <td>'.  $request->input('unique_id', '-') .'</td>
     <td class="headline" colspan="6">Student\'s Info</td>
   </tr>
   <tr>
