@@ -46,7 +46,7 @@ Route::get('/process-pdf', function (Request $request) {
 .heading { font-weight: bold; }
 
 * {
-   font-size: 11px;
+   font-size: 14px;
 }
 
 </style>
