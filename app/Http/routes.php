@@ -37,7 +37,7 @@ Route::get('/process-pdf', function (Request $request) {
 
 <img width="99%" src="'. $header_image_url .'"><hr style="margin:0px;padding:0px">
 
-<table class="table table-striped">
+<table class="table table-responsive">
   <thead>
     <tr>
       <th>Student\'s Info</th>
@@ -91,6 +91,179 @@ Route::get('/process-pdf', function (Request $request) {
       <td>' . $request->input('twitterHandle', '-') . '</td>
       <td>Instagram ID:</td>
       <td>' . $request->input('instagramID', '-') . '</td>
+    </tr>
+  </tbody>
+
+  <thead>
+    <tr>
+      <th>School\'s Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>School Name:</td>
+      <td>'.  $request->input('schoolName', '-') .'</td>
+      <td>Phone:</td>
+      <td>'.  $request->input('schoolPhone', '-') .'</td>
+    </tr>
+    <tr>
+      <td>Address:</td>
+      <td>'.  $request->input('schoolAddress', '-') .'</td>
+    </tr>
+    <tr>
+      <td>Class currently studying:</td>
+      <td>' . $request->input('classCurrentlyStudying', '-') . '</td>
+      <td>Class studied in 2015-2016:</td>
+      <td>' .  $request->input('classStudiedIn20152016', '-') . '</td>
+      <td>Class studied in 2014-2015:</td>
+      <td>' .  $request->input('classStudiedIn20142015', '-') . '</td>
+    </tr>
+    <tr>
+      <td>Current percentage marks:</td>
+      <td>' . $request->input('currentPercentageMarks', '-') . '</td>
+      <td>Percentage marks in 2015-2016:</td>
+      <td>' . $request->input('percentageMarksIn20152016', '-') . '</td>
+      <td>Percentage marks in 2014-2015:</td>
+      <td>' . $request->input('percentageMarksIn20142015', '-') . '</td>
+    </tr>
+  </tbody>
+
+  <thead>
+    <tr>
+      <th>divavel &amp; Family Immigration Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Have you visited the United States in previous 5 years?:</td>
+      <td>'.  $request->input('visitedUS5', '-') .'</td>
+    </tr>
+    <tr>
+      <td>If yes, when and where?:</td>
+      <td>'.  $request->input('visitedUS5WhenAndWhere', '-') .'</td>
+      <td>Purpose of your visit:</td>
+      <td>'.  $request->input('visitedUS5Purpose', '-') .'</td>
+      <td>How long did you stay?</td>
+      <td>'.  $request->input('visitedUS5HowLong', '-') .'</td>
+    </tr>
+    <tr>
+      <td>Has anyone in your immediate family applied for U.S. immigration?</td>
+      <td>'.  $request->input('familyImmigration', '-') .'</td>
+    </tr>
+    <tr>
+      <td>Is anyone in your immediate family a U.S. Green Card holder?</td>
+      <td>'.  $request->input('familyGreenCard', '-') .'</td>
+    </tr>
+    <tr>
+      <td>Is anyone in your immediate family living in U.S.A?</td>
+      <td>'.  $request->input('familyLivingInUSA', '-') .'</td>
+    </tr>
+    <tr>
+      <td>Is any of your relatives living in U.S.A?</td>
+      <td>'.  $request->input('relativesLivingInUSA', '-') .'</td>
+      <td>If yes, which state?:</td>
+      <td>'.  $request->input('relativesLivingInUSAState', '-') .'</td>
+    </tr>
+    <tr>
+      <td>Do you hold a U.S Visa?</td>
+      <td>'.  $request->input('holdUSVisa', '-') .'</td>
+      <td>If yes, date of expiry?</td>
+      <td>'.  $request->input('holdUSVisaExpiry', '-') .'</td>
+    </tr>
+  </tbody>
+
+  <thead>
+    <tr>
+      <th>Please answer the following questions in 100 words or less.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tell us about yourself, like your hobbies, activities, interests or anything you will like us to know on this application.</td>
+      <td>'.  $request->input('aboutYourself', '-') .'</td>
+    </tr>
+    <tr>
+      <td>Community service is very important part of the program. Please describe any community service projects you have participated. If you have not, what kind of community service projects would you be interested in?</td>
+      <td>'.  $request->input('aboutCommunityWork', '-') .'</td>
+    </tr>
+    <tr>
+  </tbody>
+
+  <thead>
+    <tr>
+      <th>Father\'s Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>First Name:</td>
+      <td>'.  $request->input('fatherFirstName', '-') .'</td>
+      <td>Middle Name:</td>
+      <td>'.  $request->input('fatherMiddleName', '-') .'</td>
+      <td>Last Name:</td>
+      <td>'.  $request->input('fatherLastName', '-') .'</td>
+    </tr>
+    <tr>
+      <td>Contact No:</td>
+      <td>'.  $request->input('fatherContact', '-') .'</td>
+      <td>E-mail ID:</td>
+      <td>'.  $request->input('fatherEmailID', '-') .'</td>
+      <td>Occupation:</td>
+      <td>'.  $request->input('fatherOccupation', '-') .'</td>
+    </tr>
+    <tr>
+      <td>Office Phone:</td>
+      <td>'.  $request->input('fatherOfficePhone', '-') .'</td>
+    </tr>
+  </tbody>
+
+  <thead>
+    <tr>
+      <th>Mother\'s Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>First Name:</td>
+      <td>'.  $request->input('motherFirstName', '-') .'</td>
+      <td>Middle Name:</td>
+      <td>'.  $request->input('motherMiddleName', '-') .'</td>
+      <td>Last Name:</td>
+      <td>'.  $request->input('motherLastName', '-') .'</td>
+    </tr>
+    <tr>
+      <td>Contact No:</td>
+      <td>'.  $request->input('motherContact', '-') .'</td>
+      <td>E-mail ID:</td>
+      <td>'.  $request->input('motherEmailID', '-') .'</td>
+      <td>Occupation:</td>
+      <td>'.  $request->input('motherOccupation', '-') .'</td>
+    </tr>
+    <tr>
+      <td>Office Phone:</td>
+      <td>'.  $request->input('motherOfficePhone', '-') .'</td>
+    </tr>
+  </tbody>
+
+  <thead>
+    <tr>
+      <th>Signature</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Student:</td>
+      <td></td>
+      <td>Father:</td>
+      <td></td>
+      <td>Mother:</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Head of School/College</td>
+      <td></td>
+      <td>School Official Seal</td>
+      <td></td>
     </tr>
   </tbody>
 </table>';
