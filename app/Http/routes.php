@@ -40,230 +40,230 @@ Route::get('/process-pdf', function (Request $request) {
 <table class="table table-responsive">
   <thead>
     <tr>
-      <th>Student\'s Info</th>
+      <th class="col-md-12">Student\'s Info</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Applicant ID:</td>
-      <td>' . $request->input('unique_id', '-') . '</td>
+      <td class="col-md-6">Applicant ID:</td>
+      <td class="col-md-6">' . $request->input('unique_id', '-') . '</td>
     </tr>
     <tr>
-      <td>First Name:</td>
-      <td>' . $request->input('first_name', '-') . '</td>
-      <td>Middle Name:</td>
-      <td>' . $request->input('middle_name', '-') . '</td>
-      <td>Last Name:</td>
-      <td>' . $request->input('last_name', '-'). '</td>
+      <td class="col-md-2">First Name:</td>
+      <td class="col-md-2">' . $request->input('first_name', '-') . '</td>
+      <td class="col-md-2">Middle Name:</td>
+      <td class="col-md-2">' . $request->input('middle_name', '-') . '</td>
+      <td class="col-md-2">Last Name:</td>
+      <td class="col-md-2">' . $request->input('last_name', '-'). '</td>
     </tr>
     <tr>
-      <td>Gender:</td>
-      <td>' . $request->input('sex', '-') . '</td>
-      <td>Citizenship:</td>
-      <td>' . $request->input('citizenship', '-') . '</td>
-      <td>Date of Birth:</td>
-      <td>' . $request->input('dob', '-') . '</td>
+      <td class="col-md-2">Gender:</td>
+      <td class="col-md-2">' . $request->input('sex', '-') . '</td>
+      <td class="col-md-2">Citizenship:</td>
+      <td class="col-md-2">' . $request->input('citizenship', '-') . '</td>
+      <td class="col-md-2">Date of Birth:</td>
+      <td class="col-md-2">' . $request->input('dob', '-') . '</td>
     </tr>
     <tr>
-      <td>Contact No:</td>
-      <td>' . $request->input('contact', '-') . '</td>
-      <td>E-mail ID:</td>
-      <td>' . $request->input('email', '-') . '</td>
-      <td>Age on 1/8/2017:</td>
-      <td>' . $request->input('ageOnFirstAugust', '-') . '</td>
+      <td class="col-md-2">Contact No:</td>
+      <td class="col-md-2">' . $request->input('contact', '-') . '</td>
+      <td class="col-md-2">E-mail ID:</td>
+      <td class="col-md-2">' . $request->input('email', '-') . '</td>
+      <td class="col-md-2">Age on 1/8/2017:</td>
+      <td class="col-md-2">' . $request->input('ageOnFirstAugust', '-') . '</td>
     </tr>
     <tr>
-      <td>Address:</td>
-      <td>'.  $request->input('address', '-') .'</td>
+      <td class="col-md-6">Address:</td>
+      <td class="col-md-6">'.  $request->input('address', '-') .'</td>
     </tr>
     <tr>
-      <td>Postal Code:</td>
-      <td>' . $request->input('postalCode', '-') . '</td>
-      <td>Thana:</td>
-      <td>' . $request->input('thana', '-') . '</td>
-      <td>District:</td>
-      <td>' . $request->input('disdivict', '-') . '</td>
+      <td class="col-md-2">Postal Code:</td>
+      <td class="col-md-2">' . $request->input('postalCode', '-') . '</td>
+      <td class="col-md-2">Thana:</td>
+      <td class="col-md-2">' . $request->input('thana', '-') . '</td>
+      <td class="col-md-2">District:</td>
+      <td class="col-md-2">' . $request->input('disdivict', '-') . '</td>
     </tr>
     <tr>
-      <td>Facebook Profile URL:</td>
-      <td>' . $request->input('facebookURL', '-') . '</td>
-      <td>Twitter Handle:</td>
-      <td>' . $request->input('twitterHandle', '-') . '</td>
-      <td>Instagram ID:</td>
-      <td>' . $request->input('instagramID', '-') . '</td>
+      <td class="col-md-2">Facebook Profile URL:</td>
+      <td class="col-md-2">' . $request->input('facebookURL', '-') . '</td>
+      <td class="col-md-2">Twitter Handle:</td>
+      <td class="col-md-2">' . $request->input('twitterHandle', '-') . '</td>
+      <td class="col-md-2">Instagram ID:</td>
+      <td class="col-md-2">' . $request->input('instagramID', '-') . '</td>
     </tr>
   </tbody>
 
   <thead>
     <tr>
-      <th>School\'s Info</th>
+      <th class="col-md-12">School\'s Info</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>School Name:</td>
-      <td>'.  $request->input('schoolName', '-') .'</td>
-      <td>Phone:</td>
-      <td>'.  $request->input('schoolPhone', '-') .'</td>
+      <td class="col-md-3">School Name:</td>
+      <td class="col-md-3">'.  $request->input('schoolName', '-') .'</td>
+      <td class="col-md-3">Phone:</td>
+      <td class="col-md-3">'.  $request->input('schoolPhone', '-') .'</td>
     </tr>
     <tr>
-      <td>Address:</td>
-      <td>'.  $request->input('schoolAddress', '-') .'</td>
+      <td class="col-md-6">Address:</td>
+      <td class="col-md-6">'.  $request->input('schoolAddress', '-') .'</td>
     </tr>
     <tr>
-      <td>Class currently studying:</td>
-      <td>' . $request->input('classCurrentlyStudying', '-') . '</td>
-      <td>Class studied in 2015-2016:</td>
-      <td>' .  $request->input('classStudiedIn20152016', '-') . '</td>
-      <td>Class studied in 2014-2015:</td>
-      <td>' .  $request->input('classStudiedIn20142015', '-') . '</td>
+      <td class="col-md-2">Class currently studying:</td>
+      <td class="col-md-2">' . $request->input('classCurrentlyStudying', '-') . '</td>
+      <td class="col-md-2">Class studied in 2015-2016:</td>
+      <td class="col-md-2">' .  $request->input('classStudiedIn20152016', '-') . '</td>
+      <td class="col-md-2">Class studied in 2014-2015:</td>
+      <td class="col-md-2">' .  $request->input('classStudiedIn20142015', '-') . '</td>
     </tr>
     <tr>
-      <td>Current percentage marks:</td>
-      <td>' . $request->input('currentPercentageMarks', '-') . '</td>
-      <td>Percentage marks in 2015-2016:</td>
-      <td>' . $request->input('percentageMarksIn20152016', '-') . '</td>
-      <td>Percentage marks in 2014-2015:</td>
-      <td>' . $request->input('percentageMarksIn20142015', '-') . '</td>
+      <td class="col-md-2">Current percentage marks:</td>
+      <td class="col-md-2">' . $request->input('currentPercentageMarks', '-') . '</td>
+      <td class="col-md-2">Percentage marks in 2015-2016:</td>
+      <td class="col-md-2">' . $request->input('percentageMarksIn20152016', '-') . '</td>
+      <td class="col-md-2">Percentage marks in 2014-2015:</td>
+      <td class="col-md-2">' . $request->input('percentageMarksIn20142015', '-') . '</td>
     </tr>
   </tbody>
 
   <thead>
     <tr>
-      <th>divavel &amp; Family Immigration Info</th>
+      <th class="col-md-12">divavel &amp; Family Immigration Info</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Have you visited the United States in previous 5 years?:</td>
-      <td>'.  $request->input('visitedUS5', '-') .'</td>
+      <td class="col-md-6">Have you visited the United States in previous 5 years?:</td>
+      <td class="col-md-6">'.  $request->input('visitedUS5', '-') .'</td>
     </tr>
     <tr>
-      <td>If yes, when and where?:</td>
-      <td>'.  $request->input('visitedUS5WhenAndWhere', '-') .'</td>
-      <td>Purpose of your visit:</td>
-      <td>'.  $request->input('visitedUS5Purpose', '-') .'</td>
-      <td>How long did you stay?</td>
-      <td>'.  $request->input('visitedUS5HowLong', '-') .'</td>
+      <td class="col-md-2">If yes, when and where?:</td>
+      <td class="col-md-2">'.  $request->input('visitedUS5WhenAndWhere', '-') .'</td>
+      <td class="col-md-2">Purpose of your visit:</td>
+      <td class="col-md-2">'.  $request->input('visitedUS5Purpose', '-') .'</td>
+      <td class="col-md-2">How long did you stay?</td>
+      <td class="col-md-2">'.  $request->input('visitedUS5HowLong', '-') .'</td>
     </tr>
     <tr>
-      <td>Has anyone in your immediate family applied for U.S. immigration?</td>
-      <td>'.  $request->input('familyImmigration', '-') .'</td>
+      <td class="col-md-6">Has anyone in your immediate family applied for U.S. immigration?</td>
+      <td class="col-md-6">'.  $request->input('familyImmigration', '-') .'</td>
     </tr>
     <tr>
-      <td>Is anyone in your immediate family a U.S. Green Card holder?</td>
-      <td>'.  $request->input('familyGreenCard', '-') .'</td>
+      <td class="col-md-6">Is anyone in your immediate family a U.S. Green Card holder?</td>
+      <td class="col-md-6">'.  $request->input('familyGreenCard', '-') .'</td>
     </tr>
     <tr>
-      <td>Is anyone in your immediate family living in U.S.A?</td>
-      <td>'.  $request->input('familyLivingInUSA', '-') .'</td>
+      <td class="col-md-6">Is anyone in your immediate family living in U.S.A?</td>
+      <td class="col-md-6">'.  $request->input('familyLivingInUSA', '-') .'</td>
     </tr>
     <tr>
-      <td>Is any of your relatives living in U.S.A?</td>
-      <td>'.  $request->input('relativesLivingInUSA', '-') .'</td>
-      <td>If yes, which state?:</td>
-      <td>'.  $request->input('relativesLivingInUSAState', '-') .'</td>
+      <td class="col-md-3">Is any of your relatives living in U.S.A?</td>
+      <td class="col-md-3">'.  $request->input('relativesLivingInUSA', '-') .'</td>
+      <td class="col-md-3">If yes, which state?:</td>
+      <td class="col-md-3">'.  $request->input('relativesLivingInUSAState', '-') .'</td>
     </tr>
     <tr>
-      <td>Do you hold a U.S Visa?</td>
-      <td>'.  $request->input('holdUSVisa', '-') .'</td>
-      <td>If yes, date of expiry?</td>
-      <td>'.  $request->input('holdUSVisaExpiry', '-') .'</td>
+      <td class="col-md-3">Do you hold a U.S Visa?</td>
+      <td class="col-md-3">'.  $request->input('holdUSVisa', '-') .'</td>
+      <td class="col-md-3">If yes, date of expiry?</td>
+      <td class="col-md-3">'.  $request->input('holdUSVisaExpiry', '-') .'</td>
     </tr>
   </tbody>
 
   <thead>
     <tr>
-      <th>Please answer the following questions in 100 words or less.</th>
+      <th class="col-md-12">Please answer the following questions in 100 words or less.</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Tell us about yourself, like your hobbies, activities, interests or anything you will like us to know on this application.</td>
-      <td>'.  $request->input('aboutYourself', '-') .'</td>
+      <td class="col-md-6">Tell us about yourself, like your hobbies, activities, interests or anything you will like us to know on this application.</td>
+      <td class="col-md-6">'.  $request->input('aboutYourself', '-') .'</td>
     </tr>
     <tr>
-      <td>Community service is very important part of the program. Please describe any community service projects you have participated. If you have not, what kind of community service projects would you be interested in?</td>
-      <td>'.  $request->input('aboutCommunityWork', '-') .'</td>
+      <td class="col-md-6">Community service is very important part of the program. Please describe any community service projects you have participated. If you have not, what kind of community service projects would you be interested in?</td>
+      <td class="col-md-6">'.  $request->input('aboutCommunityWork', '-') .'</td>
     </tr>
     <tr>
   </tbody>
 
   <thead>
     <tr>
-      <th>Father\'s Info</th>
+      <th class="col-md-12">Father\'s Info</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>First Name:</td>
-      <td>'.  $request->input('fatherFirstName', '-') .'</td>
-      <td>Middle Name:</td>
-      <td>'.  $request->input('fatherMiddleName', '-') .'</td>
-      <td>Last Name:</td>
-      <td>'.  $request->input('fatherLastName', '-') .'</td>
+      <td class="col-md-2">First Name:</td>
+      <td class="col-md-2">'.  $request->input('fatherFirstName', '-') .'</td>
+      <td class="col-md-2">Middle Name:</td>
+      <td class="col-md-2">'.  $request->input('fatherMiddleName', '-') .'</td>
+      <td class="col-md-2">Last Name:</td>
+      <td class="col-md-2">'.  $request->input('fatherLastName', '-') .'</td>
     </tr>
     <tr>
-      <td>Contact No:</td>
-      <td>'.  $request->input('fatherContact', '-') .'</td>
-      <td>E-mail ID:</td>
-      <td>'.  $request->input('fatherEmailID', '-') .'</td>
-      <td>Occupation:</td>
-      <td>'.  $request->input('fatherOccupation', '-') .'</td>
+      <td class="col-md-2">Contact No:</td>
+      <td class="col-md-2">'.  $request->input('fatherContact', '-') .'</td>
+      <td class="col-md-2">E-mail ID:</td>
+      <td class="col-md-2">'.  $request->input('fatherEmailID', '-') .'</td>
+      <td class="col-md-2">Occupation:</td>
+      <td class="col-md-2">'.  $request->input('fatherOccupation', '-') .'</td>
     </tr>
     <tr>
-      <td>Office Phone:</td>
-      <td>'.  $request->input('fatherOfficePhone', '-') .'</td>
+      <td class="col-md-6">Office Phone:</td>
+      <td class="col-md-6">'.  $request->input('fatherOfficePhone', '-') .'</td>
     </tr>
   </tbody>
 
   <thead>
     <tr>
-      <th>Mother\'s Info</th>
+      <th class="col-md-12">Mother\'s Info</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>First Name:</td>
-      <td>'.  $request->input('motherFirstName', '-') .'</td>
-      <td>Middle Name:</td>
-      <td>'.  $request->input('motherMiddleName', '-') .'</td>
-      <td>Last Name:</td>
-      <td>'.  $request->input('motherLastName', '-') .'</td>
+      <td class="col-md-2">First Name:</td>
+      <td class="col-md-2">'.  $request->input('motherFirstName', '-') .'</td>
+      <td class="col-md-2">Middle Name:</td>
+      <td class="col-md-2">'.  $request->input('motherMiddleName', '-') .'</td>
+      <td class="col-md-2">Last Name:</td>
+      <td class="col-md-2">'.  $request->input('motherLastName', '-') .'</td>
     </tr>
     <tr>
-      <td>Contact No:</td>
-      <td>'.  $request->input('motherContact', '-') .'</td>
-      <td>E-mail ID:</td>
-      <td>'.  $request->input('motherEmailID', '-') .'</td>
-      <td>Occupation:</td>
-      <td>'.  $request->input('motherOccupation', '-') .'</td>
+      <td class="col-md-2">Contact No:</td>
+      <td class="col-md-2">'.  $request->input('motherContact', '-') .'</td>
+      <td class="col-md-2">E-mail ID:</td>
+      <td class="col-md-2">'.  $request->input('motherEmailID', '-') .'</td>
+      <td class="col-md-2">Occupation:</td>
+      <td class="col-md-2">'.  $request->input('motherOccupation', '-') .'</td>
     </tr>
     <tr>
-      <td>Office Phone:</td>
-      <td>'.  $request->input('motherOfficePhone', '-') .'</td>
+      <td class="col-md-6">Office Phone:</td>
+      <td class="col-md-6">'.  $request->input('motherOfficePhone', '-') .'</td>
     </tr>
   </tbody>
 
   <thead>
     <tr>
-      <th>Signature</th>
+      <th class="col-md-12">Signature</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Student:</td>
-      <td></td>
-      <td>Father:</td>
-      <td></td>
-      <td>Mother:</td>
-      <td></td>
+      <td class="col-md-2">Student:</td>
+      <td class="col-md-2"></td>
+      <td class="col-md-2">Father:</td>
+      <td class="col-md-2"></td>
+      <td class="col-md-2">Mother:</td>
+      <td class="col-md-2"></td>
     </tr>
     <tr>
-      <td>Head of School/College</td>
-      <td></td>
-      <td>School Official Seal</td>
-      <td></td>
+      <td class="col-md-3">Head of School/College</td>
+      <td class="col-md-3"></td>
+      <td class="col-md-3">School Official Seal</td>
+      <td class="col-md-3"></td>
     </tr>
   </tbody>
 </table>';
