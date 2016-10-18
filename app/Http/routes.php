@@ -27,29 +27,7 @@ Route::get('/process-pdf', function (Request $request) {
 
 
     $input =  $request->input('name', '<Please pass a name>');
-    $text2= '<style>
-.row {
-  padding: 2px;
-  border: 1px solid #d3d3d3;
-}
-
-.headline{
-  color: white;
-  text-align: center;
-  background-color: grey;
-}
-
-.tall {
-   height: 120px;
-}
-
-.heading { font-weight: bold; }
-
-* {
-   font-size: 14px;
-}
-
-</style>
+    $text2= '
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -58,214 +36,214 @@ Route::get('/process-pdf', function (Request $request) {
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 <div>
-    <div class="col-md-12">
+    <div class="col-xs-12">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-xs-12">
           <img width="99%" src="'. $header_image_url .'"><hr style="margin:0px;padding:0px">
         </div>
       </div>
       <div class="row">
-        <div class="col-md-1 col-md-1 heading">Applicant ID:</div>
-        <div class="col-md-3">'.  $request->input('unique_id', '-') .'</div>
-        <div class="col-md-8 headline">Student\'s Info</div>
+        <h4 class="col-xs-1">Applicant ID:</h4>
+        <p class="col-xs-3">'.  $request->input('unique_id', '-') .'</p>
+        <h3 class="col-xs-8 headline">Student\'s Info</h3>
       </div>
       <div class="row">
-        <div class="col-md-1 col-md-1 heading">First Name:</div>
-        <div class="col-md-3">'.  $request->input('first_name', '-') .'</div>
-        <div class="col-md-1 col-md-1 heading">Middle Name:</div>
-        <div class="col-md-3">'.  $request->input('middle_name', '-') .'</div>
-        <div class="col-md-1 col-md-1 heading">Last Name:</div>
-        <div class="col-md-3">'.  $request->input('last_name', '-') .'</div>
+        <h4 class="col-xs-1 col-xs-1 heading">First Name:</h4>
+        <p class="col-xs-3">'.  $request->input('first_name', '-') .'</p>
+        <h4 class="col-xs-1 col-xs-1 heading">Middle Name:</h4>
+        <p class="col-xs-3">'.  $request->input('middle_name', '-') .'</p>
+        <h4 class="col-xs-1 col-xs-1 heading">Last Name:</h4>
+        <p class="col-xs-3">'.  $request->input('last_name', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-1 heading">Gender:</div>
-        <div class="col-md-3">'.  $request->input('sex', '-') .'</div>
-        <div class="col-md-1 heading">Citizenship:</div>
-        <div class="col-md-3">'.  $request->input('citizenship', '-') .'</div>
-        <div class="col-md-1 heading">Date of Birth:</div>
-        <div class="col-md-3">'.  $request->input('dob', '-') .'</div>
+        <h4 class="col-xs-1 heading">Gender:</h4>
+        <p class="col-xs-3">'.  $request->input('sex', '-') .'</p>
+        <h4 class="col-xs-1 heading">Citizenship:</h4>
+        <p class="col-xs-3">'.  $request->input('citizenship', '-') .'</p>
+        <h4 class="col-xs-1 heading">Date of Birth:</h4>
+        <p class="col-xs-3">'.  $request->input('dob', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-1 heading">Contact No:</div>
-        <div class="col-md-3">'.  $request->input('contact', '-') .'</div>
-        <div class="col-md-1 heading">E-mail ID:</div>
-        <div class="col-md-3" >'.  $request->input('email', '-') .'</div>
-        <div class="col-md-1 heading">Age on 1/8/2017:</div>
-        <div class="col-md-3">'.  $request->input('ageOnFirstAugust', '-') .'</div>
+        <h4 class="col-xs-1 heading">Contact No:</h4>
+        <p class="col-xs-3">'.  $request->input('contact', '-') .'</p>
+        <h4 class="col-xs-1 heading">E-mail ID:</h4>
+        <p class="col-xs-3" >'.  $request->input('email', '-') .'</p>
+        <h4 class="col-xs-1 heading">Age on 1/8/2017:</h4>
+        <p class="col-xs-3">'.  $request->input('ageOnFirstAugust', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-1 heading">Address:</div>
-        <div class="col-md-11">'.  $request->input('address', '-') .'</div>
+        <h4 class="col-xs-1 heading">Address:</h4>
+        <p class="col-xs-11">'.  $request->input('address', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-1 heading">Postal Code:</div>
-        <div class="col-md-3">'.  $request->input('postalCode', '-') .'</div>
-        <div class="col-md-1 heading">Thana:</div>
-        <div class="col-md-3">'.  $request->input('thana', '-') .'</div>
-        <div class="col-md-1 heading">District:</div>
-        <div class="col-md-3">'.  $request->input('disdivict', '-') .'</div>
+        <h4 class="col-xs-1 heading">Postal Code:</h4>
+        <p class="col-xs-3">'.  $request->input('postalCode', '-') .'</p>
+        <h4 class="col-xs-1 heading">Thana:</h4>
+        <p class="col-xs-3">'.  $request->input('thana', '-') .'</p>
+        <h4 class="col-xs-1 heading">District:</h4>
+        <p class="col-xs-3">'.  $request->input('disdivict', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-1 heading">Facebook Profile URL:</div>
-        <div class="col-md-3">'.  $request->input('facebookURL', '-') .'</div>
-        <div class="col-md-1 heading">Twitter Handle:</div>
-        <div class="col-md-3">'.  $request->input('twitterHandle', '-') .'</div>
-        <div class="col-md-1 heading">Instagram ID:</div>
-        <div class="col-md-3">'.  $request->input('instagramID', '-') .'</div>
+        <h4 class="col-xs-1 heading">Facebook Profile URL:</h4>
+        <p class="col-xs-3">'.  $request->input('facebookURL', '-') .'</p>
+        <h4 class="col-xs-1 heading">Twitter Handle:</h4>
+        <p class="col-xs-3">'.  $request->input('twitterHandle', '-') .'</p>
+        <h4 class="col-xs-1 heading">Instagram ID:</h4>
+        <p class="col-xs-3">'.  $request->input('instagramID', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-12 headline">School\'s Info</div>
+        <h3 class="col-xs-12 headline">School\'s Info</h3>
       </div>
       <div class="row">
-        <div class="col-md-1 heading">School Name:</div>
-        <div class="col-md-7">'.  $request->input('schoolName', '-') .'</div>
-        <div class="col-md-1 heading">Phone:</div>
-        <div class="col-md-3">'.  $request->input('schoolPhone', '-') .'</div>
+        <h4 class="col-xs-1 heading">School Name:</h4>
+        <p class="col-xs-7">'.  $request->input('schoolName', '-') .'</p>
+        <h4 class="col-xs-1 heading">Phone:</h4>
+        <p class="col-xs-3">'.  $request->input('schoolPhone', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-1 heading">Address:</div>
-        <div class="col-md-11">'.  $request->input('schoolAddress', '-') .'</div>
+        <h4 class="col-xs-1 heading">Address:</h4>
+        <p class="col-xs-11">'.  $request->input('schoolAddress', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-1 heading">Class currently studying:</div>
-        <div class="col-md-3">'.  $request->input('classCurrentlyStudying', '-') .'</div>
-        <div class="col-md-1 heading">Class studied in 2015-2016:</div>
-        <div class="col-md-3">'.  $request->input('classStudiedIn20152016', '-') .'</div>
-        <div class="col-md-1 heading">Class studied in 2014-2015:</div>
-        <div class="col-md-3">'.  $request->input('classStudiedIn20142015', '-') .'</div>
+        <h4 class="col-xs-1 heading">Class currently studying:</h4>
+        <p class="col-xs-3">'.  $request->input('classCurrentlyStudying', '-') .'</p>
+        <h4 class="col-xs-1 heading">Class studied in 2015-2016:</h4>
+        <p class="col-xs-3">'.  $request->input('classStudiedIn20152016', '-') .'</p>
+        <h4 class="col-xs-1 heading">Class studied in 2014-2015:</h4>
+        <p class="col-xs-3">'.  $request->input('classStudiedIn20142015', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-1 heading">Current percentage marks:</div>
-        <div class="col-md-3">'.  $request->input('currentPercentageMarks', '-') .'</div>
-        <div class="col-md-1 heading">Percentage marks in 2015-2016:</div>
-        <div class="col-md-3">'.  $request->input('percentageMarksIn20152016', '-') .'</div>
-        <div class="col-md-1 heading">Percentage marks in 2014-2015:</div>
-        <div class="col-md-3">'.  $request->input('percentageMarksIn20142015', '-') .'</div>
+        <h4 class="col-xs-1 heading">Current percentage marks:</h4>
+        <p class="col-xs-3">'.  $request->input('currentPercentageMarks', '-') .'</p>
+        <h4 class="col-xs-1 heading">Percentage marks in 2015-2016:</h4>
+        <p class="col-xs-3">'.  $request->input('percentageMarksIn20152016', '-') .'</p>
+        <h4 class="col-xs-1 heading">Percentage marks in 2014-2015:</h4>
+        <p class="col-xs-3">'.  $request->input('percentageMarksIn20142015', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-12 headline">divavel &amp; Family Immigration Info</div>
+        <h3 class="col-xs-12 headline">divavel &amp; Family Immigration Info</h3>
       </div>
       <div class="row">
-        <div  class="col-md-8 heading">Have you visited the United States in previous 5 years?:</div>
-        <div class="col-md-4">'.  $request->input('visitedUS5', '-') .'</div>
+        <h4 class="col-xs-8 heading">Have you visited the United States in previous 5 years?:</h4>
+        <p class="col-xs-4">'.  $request->input('visitedUS5', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-1 heading" >If yes, when and where?:</div>
-        <div class="col-md-3">'.  $request->input('visitedUS5WhenAndWhere', '-') .'</div>
-        <div class="col-md-1 heading" >Purpose of your visit:</div>
-        <div class="col-md-3">'.  $request->input('visitedUS5Purpose', '-') .'</div>
-        <div  class="col-md-1 heading">How long did you stay?</div>
-        <div class="col-md-3">'.  $request->input('visitedUS5HowLong', '-') .'</div>
+        <h4 class="col-xs-1 heading" >If yes, when and where?:</h4>
+        <p class="col-xs-3">'.  $request->input('visitedUS5WhenAndWhere', '-') .'</p>
+        <h4 class="col-xs-1 heading" >Purpose of your visit:</h4>
+        <p class="col-xs-3">'.  $request->input('visitedUS5Purpose', '-') .'</p>
+        <h4  class="col-xs-1 heading">How long did you stay?</h4>
+        <p class="col-xs-3">'.  $request->input('visitedUS5HowLong', '-') .'</p>
       </div>
       <div class="row">
-        <div  class="col-md-8 heading">Has anyone in your immediate family applied for U.S. immigration?</div>
-        <div class="col-md-4">'.  $request->input('familyImmigration', '-') .'</div>
+        <h4 class="col-xs-8 heading">Has anyone in your immediate family applied for U.S. immigration?</h4>
+        <p class="col-xs-4">'.  $request->input('familyImmigration', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-8 heading">Is anyone in your immediate family a U.S. Green Card holder?</div>
-        <div class="col-md-4">'.  $request->input('familyGreenCard', '-') .'</div>
+        <h4 class="col-xs-8 heading">Is anyone in your immediate family a U.S. Green Card holder?</h4>
+        <p class="col-xs-4">'.  $request->input('familyGreenCard', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-8 heading">Is anyone in your immediate family living in U.S.A?</div>
-        <div class="col-md-4">'.  $request->input('familyLivingInUSA', '-') .'</div>
+        <h4 class="col-xs-8 heading">Is anyone in your immediate family living in U.S.A?</h4>
+        <p class="col-xs-4">'.  $request->input('familyLivingInUSA', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-6 heading">Is any of your relatives living in U.S.A?</div>
-        <div class="col-md-2">'.  $request->input('relativesLivingInUSA', '-') .'</div>
-        <div class="col-md-1 heading">If yes, which state?</div>
-        <div class="col-md-3">'.  $request->input('relativesLivingInUSAState', '-') .'</div>
+        <h4 class="col-xs-6 heading">Is any of your relatives living in U.S.A?</h4>
+        <p class="col-xs-2">'.  $request->input('relativesLivingInUSA', '-') .'</p>
+        <h4 class="col-xs-1 heading">If yes, which state?</h4>
+        <p class="col-xs-3">'.  $request->input('relativesLivingInUSAState', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-1 heading">Do you hold a U.S Visa?</div>
-        <div class="col-md-3">'.  $request->input('holdUSVisa', '-') .'</div>
-        <div class="col-md-1 heading">If yes, date of expiry?</div>
-        <div class="col-md-3">'.  $request->input('holdUSVisaExpiry', '-') .'</div>
+        <h4 class="col-xs-1 heading">Do you hold a U.S Visa?</h4>
+        <p class="col-xs-3">'.  $request->input('holdUSVisa', '-') .'</p>
+        <h4 class="col-xs-1 heading">If yes, date of expiry?</h4>
+        <p class="col-xs-3">'.  $request->input('holdUSVisaExpiry', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-12 headline" >Please answer the following questions in 100 words or less.</div>
+        <h2 class="col-xs-12" >Please answer the following questions in 100 words or less.</h2>
       </div>
       <div class="row">
-        <div class="col-md-12 heading" >Tell us about yourself, like your hobbies, activities, interests or anything you will like us to know on this application.</div>
+        <h2 class="col-xs-12" >Tell us about yourself, like your hobbies, activities, interests or anything you will like us to know on this application.</h2>
       </div>
       <div class="row">
-        <div class="col-md-12" >'.  $request->input('aboutYourself', '-') .'</div>
+        <p class="col-xs-12" >'.  $request->input('aboutYourself', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-12 heading">Community service is very important part of the program. Please describe any community service projects you have participated. If you have not, what kind of community service projects would you be interested in?</div>
+        <h2 class="col-xs-12">Community service is very important part of the program. Please describe any community service projects you have participated. If you have not, what kind of community service projects would you be interested in?</h2>
       </div>
       <div class="row">
-        <div class="col-md-12" >'.  $request->input('aboutCommunityWork', '-') .'</div>
+        <p class="col-xs-12">'.  $request->input('aboutCommunityWork', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-12 headline">Father\'s Info</div>
+        <h3 class="col-xs-12 headline">Father\'s Info</h3>
       </div>
       <div class="row">
-        <div class="col-md-1 heading">First Name:</div>
-        <div class="col-md-3">'.  $request->input('fatherFirstName', '-') .'</div>
-        <div class="col-md-1 heading">Middle Name:</div>
-        <div class="col-md-3">'.  $request->input('fatherMiddleName', '-') .'</div>
-        <div class="col-md-1 heading">Last Name:</div>
-        <div class="col-md-3">'.  $request->input('fatherLastName', '-') .'</div>
+        <h4 class="col-xs-1 heading">First Name:</h4>
+        <p class="col-xs-3">'.  $request->input('fatherFirstName', '-') .'</p>
+        <h4 class="col-xs-1 heading">Middle Name:</h4>
+        <p class="col-xs-3">'.  $request->input('fatherMiddleName', '-') .'</p>
+        <h4 class="col-xs-1 heading">Last Name:</h4>
+        <p class="col-xs-3">'.  $request->input('fatherLastName', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-1 heading">Contact No:</div>
-        <div class="col-md-3">'.  $request->input('fatherContact', '-') .'</div>
-        <div class="col-md-1 heading">E-mail ID:</div>
-        <div class="col-md-3">'.  $request->input('fatherEmailID', '-') .'</div>
-        <div class="col-md-1 heading">Occupation:</div>
-        <div class="col-md-3">'.  $request->input('fatherOccupation', '-') .'</div>
+        <h4 class="col-xs-1 heading">Contact No:</h4>
+        <p class="col-xs-3">'.  $request->input('fatherContact', '-') .'</p>
+        <h4 class="col-xs-1 heading">E-mail ID:</h4>
+        <p class="col-xs-3">'.  $request->input('fatherEmailID', '-') .'</p>
+        <h4 class="col-xs-1 heading">Occupation:</h4>
+        <p class="col-xs-3">'.  $request->input('fatherOccupation', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-1 heading">Office Phone:</div>
-        <div class="col-md-3">'.  $request->input('fatherOfficePhone', '-') .'</div>
-        <div class="col-md-8"></div>
+        <h4 class="col-xs-1 heading">Office Phone:</h4>
+        <p class="col-xs-3">'.  $request->input('fatherOfficePhone', '-') .'</p>
+        <div class="col-xs-8"></div>
       </div>
       <div class="row">
-        <div class="col-md-12 headline">Mother\'s Info</div>
+        <h3 class="col-xs-12 headline">Mother\'s Info</h3>
       </div>
       <div class="row">
-        <div class="col-md-1 heading">First Name:</div>
-        <div class="col-md-3">'.  $request->input('motherFirstName', '-') .'</div>
-        <div class="col-md-1 heading">Middle Name:</div>
-        <div class="col-md-3">'.  $request->input('motherMiddleName', '-') .'</div>
-        <div class="col-md-1 heading">Last Name:</div>
-        <div class="col-md-3">'.  $request->input('motherLastName', '-') .'</div>
+        <h4 class="col-xs-1 heading">First Name:</h4>
+        <p class="col-xs-3">'.  $request->input('motherFirstName', '-') .'</p>
+        <h4 class="col-xs-1 heading">Middle Name:</h4>
+        <p class="col-xs-3">'.  $request->input('motherMiddleName', '-') .'</p>
+        <h4 class="col-xs-1 heading">Last Name:</h4>
+        <p class="col-xs-3">'.  $request->input('motherLastName', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-1 heading">Contact No:</div>
-        <div class="col-md-3">'.  $request->input('motherContact', '-') .'</div>
-        <div class="col-md-1 heading">E-mail ID:</div>
-        <div class="col-md-3">'.  $request->input('motherEmailID', '-') .'</div>
-        <div class="col-md-1 heading">Occupation:</div>
-        <div class="col-md-3">'.  $request->input('motherOccupation', '-') .'</div>
+        <h4 class="col-xs-1 heading">Contact No:</h4>
+        <p class="col-xs-3">'.  $request->input('motherContact', '-') .'</p>
+        <h4 class="col-xs-1 heading">E-mail ID:</h4>
+        <p class="col-xs-3">'.  $request->input('motherEmailID', '-') .'</p>
+        <h4 class="col-xs-1 heading">Occupation:</h4>
+        <p class="col-xs-3">'.  $request->input('motherOccupation', '-') .'</p>
       </div>
       <div class="row">
-        <div class="col-md-1 heading">Office Phone:</div>
-        <div class="col-md-3">'.  $request->input('motherOfficePhone', '-') .'</div>
-        <div class="col-md-8" ></div>
+        <h4 class="col-xs-1 heading">Office Phone:</h4>
+        <p class="col-xs-3">'.  $request->input('motherOfficePhone', '-') .'</p>
+        <div class="col-xs-8"></div>
       </div>
       <div class="row">
-        <div class="col-md-12 headline">Signatures</div>
+        <h4 class="col-xs-12 headline">Signatures</h4>
       </div>
-      <div class="row tall">
-        <div class="col-md-3 heading">Student:</div>
-        <div class="col-md-9"></div>
+      <div class="row">
+        <h4 class="col-xs-3 heading">Student:</h4>
+        <div class="col-xs-9"></div>
       </div>
-      <div class="row tall">
-        <div class="col-md-3 heading">Father:</div>
-        <div class="col-md-9"></div>
+      <div class="row">
+        <h4 class="col-xs-3 heading">Father:</h4>
+        <div class="col-xs-9"></div>
       </div>
-      <div class="row tall">
-        <div class="col-md-3 heading">Mother:</div>
-        <div class="col-md-9"></div>
+      <div class="row">
+        <h4 class="col-xs-3 heading">Mother:</h4>
+        <div class="col-xs-9"></div>
       </div>
-        <div class="row tall">
-        <div class="col-md-3 heading">Head of School/College</div>
-        <div class="col-md-9"></div>
+        <div class="row">
+        <h4 class="col-xs-3 heading">Head of School/College</h4>
+        <div class="col-xs-9"></div>
       </div>
-      <div class="row tall">
-        <div class="col-md-3 heading">School Official Seal</div>
-        <div class="col-md-9"></div>
+      <div class="row">
+        <h4 class="col-xs-3 heading">School Official Seal</h4>
+        <div class="col-xs-9"></div>
       </div>
     </div>
 </div>';
