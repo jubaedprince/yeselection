@@ -22,6 +22,10 @@ Route::get('/process-pdf', function (Request $request) {
    $snappy = App::make('snappy.pdf');
     //To file
     
+    $header_image_url = public_path('online_app_header.png');
+
+
+    
     $input =  $request->input('name', '<Please pass a name>');
     $text2= '<style>
     
@@ -39,7 +43,7 @@ th, td {
 }
 
 .tall {
-   height: 70px;
+   height: 120px;
 }
 
 .heading { font-weight: bold; }
@@ -58,7 +62,7 @@ th, td {
 <div class="table">
   <table class="table">
     <tr>
-      <img class="responsive" src="http://placehold.it/800x200"><br>
+      <img class="responsive"  src="'. $header_image_url .'"><hr style="margin:0px;padding:0px">
     </tr>
     <tr>
       <td class="heading">Applicant ID:</td>
@@ -85,7 +89,9 @@ th, td {
       <td class="heading">Contact No:</td>
       <td>'.  $request->input('contact', '-') .'</td>
       <td class="heading">E-mail ID:</td>
-      <td colspan="3">'.  $request->input('email', '-') .'</td>
+      <td >'.  $request->input('email', '-') .'</td>
+      <td class="heading">Age on 1/8/2017:</td>
+      <td>'.  $request->input('ageOnFirstAugust', '-') .'</td>
     </tr>
     <tr>
       <td class="heading">Address:</td>
@@ -253,11 +259,13 @@ th, td {
       <td class="heading">Mother:</td>
       <td colspan="5"></td>
     </tr>
-    <tr class="tall">
+      <tr class="tall">
       <td class="heading">Head of School/College</td>
-      <td colspan="2"></td>
+      <td colspan="5"></td>
+    </tr>
+    <tr class="tall">
       <td class="heading">School Official Seal</td>
-      <td colspan="2"></td>
+      <td colspan="5"></td>
     </tr>
   </table>
 </div>';
