@@ -40,7 +40,7 @@ Route::get('/process-pdf', function (Request $request) {
 }
 
 .tall {
-   height: 90px;
+   height: 120px;
 }
 
 .heading { font-weight: bold; }
