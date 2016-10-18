@@ -30,19 +30,24 @@ Route::get('/process-pdf', function (Request $request) {
     $text2= '<style>
 .row {
   padding: 2px;
-  border: 1px solid black;
+  border: 1px solid #d3d3d3;
 }
 
 .headline{
+  color: white;
   text-align: center;
   background-color: grey;
 }
 
 .tall {
-   height: 120px;
+   height: 90px;
 }
 
 .heading { font-weight: bold; }
+
+* {
+   font-size: 11px;
+}
 
 </style>
 
@@ -56,7 +61,7 @@ Route::get('/process-pdf', function (Request $request) {
     <div class="col-xs-12">
       <div class="row">
         <div class="col-xs-12">
-        <!--   <img class="responsive"  src="'. $header_image_url .'"><hr style="margin:0px;padding:0px"> -->
+          <img width="99%" src="'. $header_image_url .'"><hr style="margin:0px;padding:0px">
         </div>
       </div>
       <div class="row">
