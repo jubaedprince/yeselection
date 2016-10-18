@@ -44,15 +44,15 @@ Route::get('/process-pdf', function (Request $request) {
   <tbody>
     <tr>
       <td>Applicant ID:</td>
-      <td>'$request->input('unique_id', '-')'</td>
+      <td>' . $request->input('unique_id', '-') . '</td>
     </tr>
     <tr>
       <td>First Name:</td>
-      <td>'$request->input('first_name', '-')'</td>
+      <td>' . $request->input('first_name', '-') . '</td>
       <td>Middle Name:</td>
-      <td>'$request->input('middle_name', '-')'</td>
+      <td>' . $request->input('middle_name', '-') . '</td>
       <td>Last Name:</td>
-      <td>'$request->input('last_name', '-')'</td>
+      <td>' . $request->input('last_name', '-') . '</td>
     </tr>
   </tbody>
 </table>';
