@@ -35,6 +35,8 @@ Route::get('/process-pdf', function (Request $request) {
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+<img width="99%" src="'. $header_image_url .'"><hr style="margin:0px;padding:0px">
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -52,7 +54,43 @@ Route::get('/process-pdf', function (Request $request) {
       <td>Middle Name:</td>
       <td>' . $request->input('middle_name', '-') . '</td>
       <td>Last Name:</td>
-      <td>' . $request->input('last_name', '-') . '</td>
+      <td>' . $request->input('last_name', '-'). '</td>
+    </tr>
+    <tr>
+      <td>Gender:</td>
+      <td>' . $request->input('sex', '-') . '</td>
+      <td>Citizenship:</td>
+      <td>' . $request->input('citizenship', '-') . '</td>
+      <td>Date of Birth:</td>
+      <td>' . $request->input('dob', '-') . '</td>
+    </tr>
+    <tr>
+      <td>Contact No:</td>
+      <td>' . $request->input('contact', '-') . '</td>
+      <td>E-mail ID:</td>
+      <td>' . $request->input('email', '-') . '</td>
+      <td>Age on 1/8/2017:</td>
+      <td>' . $request->input('ageOnFirstAugust', '-') . '</td>
+    </tr>
+    <tr>
+      <td>Address:</td>
+      <td>'.  $request->input('address', '-') .'</td>
+    </tr>
+    <tr>
+      <td>Postal Code:</td>
+      <td>' . $request->input('postalCode', '-') . '</td>
+      <td>Thana:</td>
+      <td>' . $request->input('thana', '-') . '</td>
+      <td>District:</td>
+      <td>' . $request->input('disdivict', '-') . '</td>
+    </tr>
+    <tr>
+      <td>Facebook Profile URL:</td>
+      <td>' . $request->input('facebookURL', '-') . '</td>
+      <td>Twitter Handle:</td>
+      <td>' . $request->input('twitterHandle', '-') . '</td>
+      <td>Instagram ID:</td>
+      <td>' . $request->input('instagramID', '-') . '</td>
     </tr>
   </tbody>
 </table>';
