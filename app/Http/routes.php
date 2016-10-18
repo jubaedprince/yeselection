@@ -35,218 +35,27 @@ Route::get('/process-pdf', function (Request $request) {
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-<div>
-    <div class="col-xs-12">
-      <div class="row">
-        <div class="col-xs-12">
-          <img width="99%" src="'. $header_image_url .'"><hr style="margin:0px;padding:0px">
-        </div>
-      </div>
-      <div class="row">
-        <p class="col-xs-1">Applicant ID:</p>
-        <p class="col-xs-3">'.  $request->input('unique_id', '-') .'</p>
-        <p class="col-xs-8 headline">Student\'s Info</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-1 col-xs-1 heading">First Name:</p>
-        <p class="col-xs-3">'.  $request->input('first_name', '-') .'</p>
-        <p class="col-xs-1 col-xs-1 heading">Middle Name:</p>
-        <p class="col-xs-3">'.  $request->input('middle_name', '-') .'</p>
-        <p class="col-xs-1 col-xs-1 heading">Last Name:</p>
-        <p class="col-xs-3">'.  $request->input('last_name', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-1 heading">Gender:</p>
-        <p class="col-xs-3">'.  $request->input('sex', '-') .'</p>
-        <p class="col-xs-1 heading">Citizenship:</p>
-        <p class="col-xs-3">'.  $request->input('citizenship', '-') .'</p>
-        <p class="col-xs-1 heading">Date of Birth:</p>
-        <p class="col-xs-3">'.  $request->input('dob', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-1 heading">Contact No:</p>
-        <p class="col-xs-3">'.  $request->input('contact', '-') .'</p>
-        <p class="col-xs-1 heading">E-mail ID:</p>
-        <p class="col-xs-3" >'.  $request->input('email', '-') .'</p>
-        <p class="col-xs-1 heading">Age on 1/8/2017:</p>
-        <p class="col-xs-3">'.  $request->input('ageOnFirstAugust', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-1 heading">Address:</p>
-        <p class="col-xs-11">'.  $request->input('address', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-1 heading">Postal Code:</p>
-        <p class="col-xs-3">'.  $request->input('postalCode', '-') .'</p>
-        <p class="col-xs-1 heading">Thana:</p>
-        <p class="col-xs-3">'.  $request->input('thana', '-') .'</p>
-        <p class="col-xs-1 heading">District:</p>
-        <p class="col-xs-3">'.  $request->input('disdivict', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-1 heading">Facebook Profile URL:</p>
-        <p class="col-xs-3">'.  $request->input('facebookURL', '-') .'</p>
-        <p class="col-xs-1 heading">Twitter Handle:</p>
-        <p class="col-xs-3">'.  $request->input('twitterHandle', '-') .'</p>
-        <p class="col-xs-1 heading">Instagram ID:</p>
-        <p class="col-xs-3">'.  $request->input('instagramID', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-12 headline">School\'s Info</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-1 heading">School Name:</p>
-        <p class="col-xs-7">'.  $request->input('schoolName', '-') .'</p>
-        <p class="col-xs-1 heading">Phone:</p>
-        <p class="col-xs-3">'.  $request->input('schoolPhone', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-1 heading">Address:</p>
-        <p class="col-xs-11">'.  $request->input('schoolAddress', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-1 heading">Class currently studying:</p>
-        <p class="col-xs-3">'.  $request->input('classCurrentlyStudying', '-') .'</p>
-        <p class="col-xs-1 heading">Class studied in 2015-2016:</p>
-        <p class="col-xs-3">'.  $request->input('classStudiedIn20152016', '-') .'</p>
-        <p class="col-xs-1 heading">Class studied in 2014-2015:</p>
-        <p class="col-xs-3">'.  $request->input('classStudiedIn20142015', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-1 heading">Current percentage marks:</p>
-        <p class="col-xs-3">'.  $request->input('currentPercentageMarks', '-') .'</p>
-        <p class="col-xs-1 heading">Percentage marks in 2015-2016:</p>
-        <p class="col-xs-3">'.  $request->input('percentageMarksIn20152016', '-') .'</p>
-        <p class="col-xs-1 heading">Percentage marks in 2014-2015:</p>
-        <p class="col-xs-3">'.  $request->input('percentageMarksIn20142015', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-12 headline">divavel &amp; Family Immigration Info</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-8 heading">Have you visited the United States in previous 5 years?:</p>
-        <p class="col-xs-4">'.  $request->input('visitedUS5', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-1 heading" >If yes, when and where?:</p>
-        <p class="col-xs-3">'.  $request->input('visitedUS5WhenAndWhere', '-') .'</p>
-        <p class="col-xs-1 heading" >Purpose of your visit:</p>
-        <p class="col-xs-3">'.  $request->input('visitedUS5Purpose', '-') .'</p>
-        <p  class="col-xs-1 heading">How long did you stay?</p>
-        <p class="col-xs-3">'.  $request->input('visitedUS5HowLong', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-8 heading">Has anyone in your immediate family applied for U.S. immigration?</p>
-        <p class="col-xs-4">'.  $request->input('familyImmigration', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-8 heading">Is anyone in your immediate family a U.S. Green Card holder?</p>
-        <p class="col-xs-4">'.  $request->input('familyGreenCard', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-8 heading">Is anyone in your immediate family living in U.S.A?</p>
-        <p class="col-xs-4">'.  $request->input('familyLivingInUSA', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-6 heading">Is any of your relatives living in U.S.A?</p>
-        <p class="col-xs-2">'.  $request->input('relativesLivingInUSA', '-') .'</p>
-        <p class="col-xs-1 heading">If yes, which state?</p>
-        <p class="col-xs-3">'.  $request->input('relativesLivingInUSAState', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-1 heading">Do you hold a U.S Visa?</p>
-        <p class="col-xs-3">'.  $request->input('holdUSVisa', '-') .'</p>
-        <p class="col-xs-1 heading">If yes, date of expiry?</p>
-        <p class="col-xs-3">'.  $request->input('holdUSVisaExpiry', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-12" >Please answer the following questions in 100 words or less.</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-12" >Tell us about yourself, like your hobbies, activities, interests or anything you will like us to know on this application.</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-12" >'.  $request->input('aboutYourself', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-12">Community service is very important part of the program. Please describe any community service projects you have participated. If you have not, what kind of community service projects would you be interested in?</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-12">'.  $request->input('aboutCommunityWork', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-12 headline">Father\'s Info</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-1 heading">First Name:</p>
-        <p class="col-xs-3">'.  $request->input('fatherFirstName', '-') .'</p>
-        <p class="col-xs-1 heading">Middle Name:</p>
-        <p class="col-xs-3">'.  $request->input('fatherMiddleName', '-') .'</p>
-        <p class="col-xs-1 heading">Last Name:</p>
-        <p class="col-xs-3">'.  $request->input('fatherLastName', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-1 heading">Contact No:</p>
-        <p class="col-xs-3">'.  $request->input('fatherContact', '-') .'</p>
-        <p class="col-xs-1 heading">E-mail ID:</p>
-        <p class="col-xs-3">'.  $request->input('fatherEmailID', '-') .'</p>
-        <p class="col-xs-1 heading">Occupation:</p>
-        <p class="col-xs-3">'.  $request->input('fatherOccupation', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-1 heading">Office Phone:</p>
-        <p class="col-xs-3">'.  $request->input('fatherOfficePhone', '-') .'</p>
-        <div class="col-xs-8"></div>
-      </div>
-      <div class="row">
-        <p class="col-xs-12 headline">Mother\'s Info</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-1 heading">First Name:</p>
-        <p class="col-xs-3">'.  $request->input('motherFirstName', '-') .'</p>
-        <p class="col-xs-1 heading">Middle Name:</p>
-        <p class="col-xs-3">'.  $request->input('motherMiddleName', '-') .'</p>
-        <p class="col-xs-1 heading">Last Name:</p>
-        <p class="col-xs-3">'.  $request->input('motherLastName', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-1 heading">Contact No:</p>
-        <p class="col-xs-3">'.  $request->input('motherContact', '-') .'</p>
-        <p class="col-xs-1 heading">E-mail ID:</p>
-        <p class="col-xs-3">'.  $request->input('motherEmailID', '-') .'</p>
-        <p class="col-xs-1 heading">Occupation:</p>
-        <p class="col-xs-3">'.  $request->input('motherOccupation', '-') .'</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-1 heading">Office Phone:</p>
-        <p class="col-xs-3">'.  $request->input('motherOfficePhone', '-') .'</p>
-        <div class="col-xs-8"></div>
-      </div>
-      <div class="row">
-        <p class="col-xs-12 headline">Signatures</p>
-      </div>
-      <div class="row">
-        <p class="col-xs-3 heading">Student:</p>
-        <div class="col-xs-9"></div>
-      </div>
-      <div class="row">
-        <p class="col-xs-3 heading">Father:</p>
-        <div class="col-xs-9"></div>
-      </div>
-      <div class="row">
-        <p class="col-xs-3 heading">Mother:</p>
-        <div class="col-xs-9"></div>
-      </div>
-        <div class="row">
-        <p class="col-xs-3 heading">Head of School/College</p>
-        <div class="col-xs-9"></div>
-      </div>
-      <div class="row">
-        <p class="col-xs-3 heading">School Official Seal</p>
-        <div class="col-xs-9"></div>
-      </div>
-    </div>
-</div>';
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Student\'s Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Applicant ID:</td>
+      <td>$request->input('unique_id', '-')</td>
+    </tr>
+    <tr>
+      <td>First Name:</td>
+      <td>$request->input('first_name', '-')</td>
+      <td>Middle Name:</td>
+      <td>$request->input('middle_name', '-')</td>
+      <td>Last Name:</td>
+      <td>$request->input('last_name', '-')</td>
+    </tr>
+  </tbody>
+</table>';
     // $text= '<style type="text/css">.tg {border-collapse:collapse;border-spacing:0;}.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 8px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 8px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}.tg .tg-hgcj{font-weight:bold;text-align:center}.tg .tg-9hbo{font-weight:bold;vertical-align:top}.tg .tg-yw4l{vertical-align:top}.tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}</style><table width="400" class="tg"> <tr> <th class="tg-hgcj" colspan="6">Student\'s Info</th> </tr> <tr> <td class="tg-9hbo">Name:</td> <td class="tg-yw4l">Gulshan</td> <td class="tg-yw4l">Jubaed</td> <td class="tg-yw4l">Prince</td> <td class="tg-9hbo">Gender:</td> <td class="tg-yw4l">Male</td> </tr> <tr> <td class="tg-9hbo">Citizenship:</td> <td class="tg-yw4l">Bangladeshi</td> <td class="tg-9hbo">Date of Birth</td> <td class="tg-yw4l">27/2/1933</td> <td class="tg-9hbo">Contact No:</td> <td class="tg-yw4l">01674983245</td> </tr> <tr> <td class="tg-9hbo">E-mail ID:</td> <td class="tg-yw4l">jubaedprince@hotmail.com</td> <td class="tg-9hbo">Address:</td> <td class="tg-yw4l" colspan="3">Flat-D2, 163/164 Janata Housing</td> </tr> <tr> <td class="tg-9hbo">Postal Code:</td> <td class="tg-yw4l">1216</td> <td class="tg-9hbo">Thana:</td> <td class="tg-yw4l">Dhaka</td> <td class="tg-9hbo">District:</td> <td class="tg-yw4l">Dhaka</td> </tr> <tr> <td class="tg-9hbo">Facebook Profile URL:</td> <td class="tg-yw4l">https://www.facebook.com/jubaedprince</td> <td class="tg-9hbo">Twitter Handle:</td> <td class="tg-yw4l">jubaedprince</td> <td class="tg-9hbo">Instagram ID:</td> <td class="tg-yw4l">jubaedprince</td> </tr> <tr> <td class="tg-amwm" colspan="6">School\'s Info</td> </tr> <tr> <td class="tg-9hbo">School Name:</td> <td class="tg-yw4l" colspan="5">St. Joseph Higher Secondary School</td> </tr> <tr> <td class="tg-9hbo">Address:</td> <td class="tg-yw4l" colspan="2">Asad Avenue, Dhaka, Bangladesh</td> <td class="tg-9hbo">Phone:</td> <td class="tg-yw4l" colspan="2">02891223</td> </tr> <tr> <td class="tg-9hbo">Class currently studying:</td> <td class="tg-yw4l">9</td> <td class="tg-9hbo">Class studied in 2015-2016:</td> <td class="tg-yw4l">8</td> <td class="tg-9hbo">Class studied in 2014-2015:</td> <td class="tg-yw4l">7</td> </tr> <tr> <td class="tg-9hbo">Current percentage marks:</td> <td class="tg-yw4l">90</td> <td class="tg-9hbo">Percentage makes in 2015-2016:</td> <td class="tg-yw4l">90</td> <td class="tg-9hbo">Percentage makes in 2014-2015:</td> <td class="tg-yw4l">90</td> </tr> <tr> <td class="tg-amwm" colspan="6">Travel &amp; Family Immigration Info</td> </tr> <tr> <td class="tg-9hbo" colspan="2">Have you visited the United States in previous 5 years?:</td> <td class="tg-yw4l">No</td> <td class="tg-9hbo" colspan="2">If yes, when and where?:</td> <td class="tg-yw4l">29/29/2 Dhaka Bangladesh</td> </tr> <tr> <td class="tg-9hbo">Purpose of your visit:</td> <td class="tg-yw4l">Travel</td> <td class="tg-9hbo">How long did you stay?</td> <td class="tg-yw4l" colspan="3">2 months</td> </tr> <tr> <td class="tg-9hbo" colspan="2">Has anyone in your immediate family applied for U.S. immigration?</td> <td class="tg-yw4l">No</td> <td class="tg-9hbo" colspan="2">Is anyone in your immediate family a U.S. Green Card holder?</td> <td class="tg-yw4l">No</td> </tr> <tr> <td class="tg-9hbo" colspan="2">Is anyone in your immediate family living in U.S.A?</td> <td class="tg-yw4l">Yes</td> <td class="tg-9hbo" colspan="2">Is any of your relatives living in U.S.A?</td> <td class="tg-yw4l">Yes</td> </tr> <tr> <td class="tg-9hbo">If yes, which state?</td> <td class="tg-yw4l">Mississippi</td> <td class="tg-9hbo">Do you hold a U.S Visa?</td> <td class="tg-yw4l" colspan="3">Yes</td> </tr> <tr> <td class="tg-9hbo">If yes, date of expiry?</td> <td class="tg-yw4l" colspan="5"></td> </tr> <tr> <td class="tg-yw4l"></td> <td class="tg-yw4l"></td> <td class="tg-yw4l"></td> <td class="tg-yw4l"></td> <td class="tg-yw4l"></td> <td class="tg-yw4l"></td> </tr> <tr> <td class="tg-yw4l"></td> <td class="tg-yw4l"></td> <td class="tg-yw4l"></td> <td class="tg-yw4l"></td> <td class="tg-yw4l"></td> <td class="tg-yw4l"></td> </tr></table>';
    // $html = '<h1>Welcome</h1><p style="background-color: yellow;">Hello '. $text2 . '';
     $name = 'YES Application Form 2017-18 (Applicant ID: ' . $request->input('unique_id', '-') . ')';
