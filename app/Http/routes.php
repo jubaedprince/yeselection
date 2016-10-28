@@ -103,7 +103,7 @@ Route::get('/process-pdf', function (Request $request) {
         <div class="col-md-1 heading">Thana:</div>
         <div class="col-md-3">'.  $request->input('thana', '-') .'</div>
         <div class="col-md-1 heading">District:</div>
-        <div class="col-md-3">'.  $request->input('disdivict', '-') .'</div>
+        <div class="col-md-3">'.  $request->input('district', '-') .'</div>
       </div>
       <div class="row">
         <div class="col-md-1 heading">Facebook Profile URL:</div>
@@ -143,7 +143,7 @@ Route::get('/process-pdf', function (Request $request) {
         <div class="col-md-3">'.  $request->input('percentageMarksIn20142015', '-') .'</div>
       </div>
       <div class="row">
-        <div class="col-md-12 headline">divavel &amp; Family Immigration Info</div>
+        <div class="col-md-12 headline">Travel &amp; Family Immigration Info</div>
       </div>
       <div class="row">
         <div  class="col-md-8 heading">Have you visited the United States in previous 5 years?:</div>
