@@ -273,14 +273,14 @@ Route::get('/process-pdf', function (Request $request) {
    // $html = '<h1>Welcome</h1><h2 style="background-color: yellow;">Hello '. $text2 . '';
     $name = 'YES Application Form 2017-18 (Applicant ID: ' . $request->input('unique_id', '-') . ')';
 
-    // try {
-    //   PDF::loadHTML($text2)->setPaper('a4')->setOrientation('portrait')->setOption('margin-bottom', 10)->save('/tmp/' .$name. '.pdf');
-    // } catch (Exception $e) {
-    //     // return Response::download('/tmp/' . $name. '.pdf');
-    //     die("Sorry! You can't get the filled application form again for security reasons. You will have to resubmit the form again. Please start over. If you are having trouble please contact iEARN-BD. ");
-    // }
+    try {
+      PDF::loadHTML($text2)->setPaper('a4')->setOrientation('portrait')->setOption('margin-bottom', 10)->save('/tmp/' .$name. '.pdf');
+    } catch (Exception $e) {
+        return Response::download('/tmp/' . $name. '.pdf');
+        // die("Sorry! You can't get the filled application form again for security reasons. You will have to resubmit the form again. Please start over. If you are having trouble please contact iEARN-BD. ");
+    }
 
-    PDF::loadHTML($text2)->setPaper('a4')->setOrientation('portrait')->setOption('margin-bottom', 10)->save('/tmp/' .$name. '.pdf');
+
 
 
     // $snappy->generateFromHtml($html, '/tmp/'.$name.'.pdf');
