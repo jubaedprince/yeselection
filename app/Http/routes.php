@@ -15,12 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+use Illuminate\Http\Request;
+
 Route::get('/get-pdf', function (Request $request) {
     $name = 'YES Application Form 2017-18 (Applicant ID: ' . $request->input('unique_id', '-') . ')';
     return Response::download('/tmp/' . $name. '.pdf');
 });
 
-use Illuminate\Http\Request;
 use PDF;
 Route::get('/process-pdf', function (Request $request) {
    $snappy = App::make('snappy.pdf');
