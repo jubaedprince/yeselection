@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Response;
 use PDF;
 use Illuminate\Http\Request;
 use Redirect;
