@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Response;
+use Response;
 use PDF;
 use Illuminate\Http\Request;
 use Redirect;
